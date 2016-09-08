@@ -1,11 +1,11 @@
-var express = require('express');
-var ip = require('ip');
-var app = express();
-var bodyParser = require('body-parser');
-var path = require('path');
-var mysql = require('mysql');
-var Usuario= require('./models/usuario.js');
-var models = require("./models/index.js");
+var express 	= require('express');
+var ip 			= require('ip');
+var app 		= express();
+var bodyParser 	= require('body-parser');
+var path 		= require('path');
+var mysql 		= require('mysql');
+var Usuario		= require('./models/usuario.js');
+var models 		= require("./models/index.js");
 
 
 app.set('views', path.join(__dirname, 'views'));

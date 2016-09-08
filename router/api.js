@@ -1,13 +1,10 @@
 //Dependecies
 var express = require('express');
-var router= express.Router();
+var router	= express.Router();
 var models  = require('../models');
-
-
 
 //Return router
 module.exports = router;
-
 
 //GET usuarios
 router.get('/usuarios', function(req, res, next) {
@@ -20,6 +17,7 @@ router.get('/usuarios', function(req, res, next) {
 		return next(ex);
 	}
 });
+
 //GET un usuario con id determinado
 router.get('/usuarios/:id', function(req, res, next) {
 	try {
@@ -89,6 +87,7 @@ router.put('/usuarios/:id', function(req,res,next){
 	}
 });
 
+//Destroy user
 router.delete('/usuarios/:id', function(req,res,next){
 	try{
 		models.Usuario.destroy({where: {id: req.params.id} }).then(function () {

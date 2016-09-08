@@ -59,7 +59,6 @@
 
   
    <h1><%=title%></h1>
-<h3>Porque debo listar, si por debajo se hace todo?</h3>
 
 
 <table class="table">
@@ -81,7 +80,14 @@
     <td><%= resultado[i].password %></td>
     <td><%= resultado[i].email %></td>
     <!--<td><%= resultado[i].rut%></td>-->
-    <td> Eliminar Modificar</td>
+    <!--  <td><form class="form-horizontal" action="/api/usuarios/#(resultado[i].id)"
+                method="DELETE">
+          <button type="submit">Eliminar</button>
+          </form>
+      </td> -->
+    <!--<td> <a type="button" method="delete"
+                href='/api/usuarios/' + resultado[i].id>
+        Eliminar</a> </td> -->
   </tr>
   <% }%>
   </tbody>
