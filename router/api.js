@@ -6,6 +6,22 @@ var models  = require('../models');
 //Return router
 module.exports = router;
 
+//Change method
+router.use( function( req, res, next ) {
+    // this middleware will call for each requested
+    // and we checked for the requested query properties
+    // if _method was existed
+    // then we know, clients need to call DELETE request instead
+    if ( req.query._method == 'DELETE' ) {
+        // change the original METHOD
+        // into DELETE method
+        req.method = 'DELETE';
+        req.url = req.path;
+    }
+    next();
+});
+
+
 //GET usuarios
 router.get('/usuarios', function(req, res, next) {
 	try {
@@ -87,12 +103,12 @@ router.put('/usuarios/:id', function(req,res,next){
 	}
 });
 
-//Destroy user
+//Delete user
 router.delete('/usuarios/:id', function(req,res,next){
 	try{
 		models.Usuario.destroy({where: {id: req.params.id} }).then(function () {
 			return models.Usuario.findAll().then(function (user) {
-				res.json(user);
+                res.render('VerUsuario.html', {title: 'Listar Usuarios', resultado: user});
 			})
 		})
 	}
@@ -101,4 +117,5 @@ router.delete('/usuarios/:id', function(req,res,next){
 		return next(ex);
 	}
 });
+
 

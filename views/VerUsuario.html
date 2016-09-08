@@ -80,14 +80,13 @@
     <td><%= resultado[i].password %></td>
     <td><%= resultado[i].email %></td>
     <!--<td><%= resultado[i].rut%></td>-->
-    <!--  <td><form class="form-horizontal" action="/api/usuarios/#(resultado[i].id)"
-                method="DELETE">
+     <!--<td><form method="DELETE" action="/api/usuarios/<%= resultado[i].id %>?_method=DELETE"
+               enctype="application/x-www-form-urlencoded">
           <button type="submit">Eliminar</button>
           </form>
       </td> -->
-    <!--<td> <a type="button" method="delete"
-                href='/api/usuarios/' + resultado[i].id>
-        Eliminar</a> </td> -->
+    <td> <a href='/api/usuarios/<%= resultado[i].id %>?_method=DELETE'>
+        Eliminar</a> </td>
   </tr>
   <% }%>
   </tbody>
