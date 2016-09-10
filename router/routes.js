@@ -28,7 +28,7 @@ app.get('/crearUsuario', function(req, res){
 
 app.get('/subirDatos', function (req, res) {
     res.render('SubirDatos.html');
-})
+});
 
 app.get('/actualizarUsuario',function(req,res){
     console.log("en app.get");
@@ -65,7 +65,7 @@ app.post('/upload', function(req, res) {
 });
 
 app.get('/logged', function(req, res){
-    res.render('logged.html', {title: 'tulin tulon'});
+    res.render('logged.html', {title: 'tula'});
 });
 
 module.exports=app;
