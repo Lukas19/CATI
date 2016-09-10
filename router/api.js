@@ -7,6 +7,26 @@ var passport = require('../config/passport.js');
 //Return router
 module.exports = router;
 
+//Change method
+router.use( function( req, res, next ) {
+	// this middleware will call for each requested
+	// and we checked for the requested query properties
+	// if _method was existed
+	// then we know, clients need to call DELETE request instead
+	console.log("time to change " + req.query._method);
+	//console.log(req.body._method);
+	if ( req.query._method == 'DELETE' ) {
+		// change the original METHOD
+		req.method = 'DELETE';
+		req.url = req.path;
+	}else if ( req.body._method == 'PUT' ) {
+		req.method = 'PUT';
+		req.url = req.path;
+	}
+	next();
+});
+
+
 //GET usuarios
 router.get('/usuarios', function(req, res, next) {
 	try {
@@ -58,6 +78,7 @@ try{
 	}
 });
 
+//Update user
 router.put('/usuarios/:id', function(req,res,next){
 	try{
 
@@ -88,29 +109,8 @@ router.put('/usuarios/:id', function(req,res,next){
 	}
 });
 
-//Update user
-router.post('/usuarios/actualizar', function(req,res,next){
-	try{
-		console.log(req.body.permiso);
-		models.Usuario.updateAttributes({
-			username: req.body.username,
-			password: req.body.password,
-			email: req.body.email
-		}).then(function (result) {
-			models.Rol.create({
-				permiso: req.body.permiso,
-				UsuarioId: result.id
-			});
-			res.redirect("/");
-		});
-	}
-	catch(ex){
-		console.error("Internal error:"+ex);
-		return next(ex);
-	}
-});
 
-//Destroy user
+//Delete user
 router.delete('/usuarios/:id', function(req,res,next){
 	try{
 		models.Usuario.destroy({where: {id: req.params.id} }).then(function () {

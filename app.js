@@ -7,7 +7,7 @@ var path 		= require('path');
 var mysql 		= require('mysql');
 var Usuario		= require('./models/usuario.js');
 var models 		= require("./models/index.js");
-
+var parse = require('csv-parse');
 var morgan 		= require('morgan');
 var cookieParser = require('cookie-parser');
 var session		= require('express-session');
@@ -18,6 +18,10 @@ app.engine('html', require('ejs').renderFile);
 
 app.use('/',require('./router/routes'));
 
+/*var parser = parse({delimiter: ','}, function(err, data){
+ console.log(data);
+ });
+ fs.createReadStream(__dirname+'/data.csv').pipe(parser);*/
 
 /*var nodeadmin = require('nodeadmin');
 app.use(nodeadmin(app));*/
