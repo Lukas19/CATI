@@ -1,6 +1,9 @@
 
-var express = require('express');
-var app = express();
+var express     = require('express');
+var app         = express();
+var fileUpload  = require('express-fileupload');
+
+app.use(fileUpload());
 
 app.use(function (req,res,next) {
     console.log("estoy en app.use");
@@ -22,13 +25,44 @@ app.get('/crearUsuario',function(req,res){
     res.render('CrearUsuario.html', {title: 'Registrar Usuarios'});
 });
 
+app.get('/subirDatos', function (req, res) {
+    res.render('SubirDatos.html');
+})
+
 app.get('/actualizarUsuario',function(req,res){
     console.log("en app.get");
     //console.log(req.query._id);
     var id = req.query._id;
     res.render('ActualizarUsuario.html', {title: 'Actualizar Usuarios', id: id.toString()});
-    console.log("non");
 });
 
-module.exports=app;
+
+/*var uploading = multer({
+ dest: __dirname + '../public/uploads/',
+ });*/
+
+
+app.post('/upload', function(req, res) {
+    var sampleFile;
+
+    //console.log(req.files);
+    //console.log(req.files.sampleFile.name);
+    if (!req.files.sampleFile.name) {
+        //res.send('No files were uploaded.');
+        return;
+    }
+
+    sampleFile = req.files.sampleFile;
+    sampleFile.mv('./public/uploads/' + req.files.sampleFile.name, function(err) {
+        if (err) {
+            res.status(500).send(err);
+        }
+        else {
+            //res.send('File uploaded!');
+        }
+    });
+    res.render('index.html', {title: 'CATI'});
+});
+
+module.exports = app;
 

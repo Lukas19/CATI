@@ -4,8 +4,10 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
+    "csv-parse": "^1.1.7",
     "ejs": "^2.5.1",
     "express": "^4.10.6",
+    "express-fileupload": "0.0.5",
     "express-myconnection": "^1.0.4",
     "mysql": "~2.11.1",
     "sequelize": "^3.24.0"
