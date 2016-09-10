@@ -72,7 +72,14 @@
     	  <th> Acciones </th>
   		</tr>                
     </thead>    
-  <% for (var i= 0;i<resultado.length;i++){ %>
+  <%if(target == 'admins'){
+        var target2 = 'actualizarAdmin';
+    }else{
+        var target = 'usuarios';
+        var target2 = 'actualizarUsuario';
+    }
+
+    for (var i= 0;i<resultado.length;i++){ %>
   <tbody>
   <tr>
     <td><%= resultado[i].id%></td>
@@ -88,9 +95,9 @@
     <!--<td> <a type="button" method="delete"
                 href='/api/usuarios/' + resultado[i].id>
         Eliminar</a> </td> -->
-    <td> <a href='/api/usuarios/<%= resultado[i].id %>?_method=DELETE'>
+    <td> <a href='/api/<%=target%>/<%= resultado[i].id %>?_method=DELETE'>
       Eliminar</a>
-      <a href='/actualizarUsuario?_id=<%= resultado[i].id %>'>
+      <a href='/<%=target2%>?_id=<%= resultado[i].id %>'>
         Modificar</a> <!--/api/usuarios/<%= resultado[i].id %>?_method=PUT -->
     </td>
   </tr>

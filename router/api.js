@@ -1,7 +1,7 @@
 //Dependecies
-var express = require('express');
-var router	= express.Router();
-var models  = require('../models');
+var express  = require('express');
+var router	 = express.Router();
+var models   = require('../models');
 var passport = require('../config/passport.js');
 
 //Return router
@@ -38,6 +38,18 @@ router.get('/usuarios', function(req, res, next) {
 		console.error("Internal error:" + ex);
 		return next(ex);
 	}
+});
+
+//GET admins
+router.get('/admins', function(req, res, next) {
+    try {
+        models.Admin.findAll().then(function (user) {
+            res.render('VerUsuario.html', {title: 'Listar Admins', resultado: user, target: 'admins'});
+        });
+    } catch (ex) {
+        console.error("Internal error:" + ex);
+        return next(ex);
+    }
 });
 
 //GET un usuario con id determinado
@@ -79,6 +91,24 @@ try{
 	}
 });
 
+//POST crear admin
+router.post('/admins', function(req,res,next){
+    try{
+        console.log(req.body.permiso);
+        models.Admin.create({
+            username: req.body.username,
+            password: req.body.password,
+            email: req.body.email
+        }).then(function (result) {
+            res.redirect("/");
+        });
+    }
+    catch(ex){
+        console.error("Internal error:"+ex);
+        return next(ex);
+    }
+});
+
 //Update user
 router.put('/usuarios/:id', function(req,res,next){
 	console.log("router.put");
@@ -109,6 +139,35 @@ router.put('/usuarios/:id', function(req,res,next){
 	}
 });
 
+//Update admin
+router.put('/admins/:id', function(req,res,next){
+    console.log("router.put");
+    try{
+
+        models.Admin.findOne({ where: {id:req.params.id} }).then(function (user) {
+            if(req.body.username){
+                if(req.body.email && req.body.password) {
+                    user.updateAttributes({
+                        username: req.body.username,
+                        email: req.body.email,
+                        password: req.body.password
+                    })
+                }else {
+                    user.updateAttributes({
+                        username: req.body.username
+                    })
+                }
+            }
+            return models.Admin.findAll().then(function (user) {
+                res.render('VerUsuario.html', {title: 'Listar Admins', resultado: user});
+            })
+        });
+    }
+    catch(ex){
+        console.error("Internal error:"+ex);
+        return next(ex);
+    }
+});
 
 //Delete user
 router.delete('/usuarios/:id', function(req,res,next){
@@ -125,6 +184,20 @@ router.delete('/usuarios/:id', function(req,res,next){
 	}
 });
 
+//Delete admin
+router.delete('/admins/:id', function(req,res,next){
+    try{
+        models.Admin.destroy({where: {id: req.params.id} }).then(function () {
+            return models.Admin.findAll().then(function (user) {
+                res.render('VerUsuario.html', {title: 'Listar Admin', resultado: user, target: 'admins'});
+            })
+        })
+    }
+    catch(ex){
+        console.error("Internal error:"+ex);
+        return next(ex);
+    }
+});
 
 //Login
 router.post('/login', passport.authenticate('local-login', {

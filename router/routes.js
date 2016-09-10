@@ -28,8 +28,16 @@ app.get('/verUsuario', function(req, res){
     res.redirect('/api/usuarios');
 });
 
+app.get('/verAdmin', function(req, res){
+    res.redirect('/api/admins');
+});
+
+app.get('/crearAdmin', function(req, res){
+    res.render('CrearUsuario.html', {title: 'Registrar Admins', target: 'admins'});
+});
+
 app.get('/crearUsuario', function(req, res){
-    res.render('CrearUsuario.html', {title: 'Registrar Usuarios'});
+    res.render('CrearUsuario.html', {title: 'Registrar Usuarios', target: 'usuarios'});
 });
 
 app.get('/subirDatos', function (req, res) {
@@ -40,7 +48,14 @@ app.get('/actualizarUsuario',function(req,res){
     console.log("en app.get");
     //console.log(req.query._id);
     var id = req.query._id;
-    res.render('ActualizarUsuario.html', {title: 'Actualizar Usuarios', id: id.toString()});
+    res.render('ActualizarUsuario.html', {title: 'Actualizar Usuarios', id: id.toString(), target:'usuarios'});
+});
+
+app.get('/actualizarAdmin',function(req,res){
+    console.log("en app.get");
+    //console.log(req.query._id);
+    var id = req.query._id;
+    res.render('ActualizarUsuario.html', {title: 'Actualizar Admins', id: id.toString(), target: 'admins'});
 });
 
 /*var uploading = multer({

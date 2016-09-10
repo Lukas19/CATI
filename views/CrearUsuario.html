@@ -57,9 +57,8 @@
 </nav>
 
     <h1><%=title%></h1>
-<h3>Crear Usuario</h3>
 
-<form class="form-horizontal" action="/api/usuarios" method="POST" enctype="application/x-www-form-urlencoded">
+<form class="form-horizontal" action="/api/<%=target%>" method="POST" enctype="application/x-www-form-urlencoded">
                 <fieldset>
                   <legend></legend>
                     <div class="form-group">
@@ -84,7 +83,7 @@
                     <label class="col-lg-2 control-label">Permiso</label>
                     <div class="col-lg-3">
                       <select class="form-control" id="permiso" name="permiso">
-                        <option value="ADMIN" >ADMIN</option>
+                        <!--<option value="ADMIN" >ADMIN</option>-->
                         <option value="ENCUESTADOR">ENCUESTADOR</option>
                       </select>
                       </div>

@@ -6,6 +6,7 @@ var bodyParser 	= require('body-parser');
 var path 		= require('path');
 var mysql 		= require('mysql');
 var Usuario		= require('./models/usuario.js');
+var Admin 		= require('./models/admin.js');
 var models 		= require("./models/index.js");
 var parse		= require('csv-parse');
 var morgan 		= require('morgan');

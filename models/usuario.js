@@ -10,10 +10,10 @@ module.exports = function(sequelize, DataTypes) {
         instanceMethods: {
             authenticate: function(password) {
                 return (password === this.password);
-            },
-            associate: function(models) {
-                Usuario.hasMany(models.Rol)
             }
+//            associate: function(models) {
+//                Usuario.hasMany(models.Rol)
+//            }
         }
     }
     );
