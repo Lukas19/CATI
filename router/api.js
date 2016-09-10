@@ -12,10 +12,14 @@ router.use( function( req, res, next ) {
     // and we checked for the requested query properties
     // if _method was existed
     // then we know, clients need to call DELETE request instead
+    console.log("time to change " + req.query._method);
+    //console.log(req.body._method);
     if ( req.query._method == 'DELETE' ) {
         // change the original METHOD
-        // into DELETE method
         req.method = 'DELETE';
+        req.url = req.path;
+    }else if ( req.body._method == 'PUT' ) {
+        req.method = 'PUT';
         req.url = req.path;
     }
     next();
@@ -73,35 +77,37 @@ try{
 	}
 });
 
-router.put('/usuarios/:id', function(req,res,next){
-	try{
 
-		models.Usuario.findOne({ where: {id:req.params.id} }).then(function (user) {
-			if(req.body.username){
-				if(req.body.email) {
-					user.updateAttributes({
-						username: req.body.username,
-						email: req.body.email
-					}).then(function (result) {
-						res.send(result);
-					})
-				}
-				else {
-					user.updateAttributes({
-						username: req.body.username
-					}).then(function (result) {
-						res.send(result);
-					})
-				}
+//Update user
+router.put('/usuarios/:id',function(req,res,next){
+    console.log("router.put");
+    try{
 
-			}
-		});
-	}
-	catch(ex){
-		console.error("Internal error:"+ex);
-		return next(ex);
-	}
-});
+     models.Usuario.findOne({ where: {id:req.params.id} }).then(function (user) {
+        if(req.body.username){
+            if(req.body.email && req.body.password) {
+                user.updateAttributes({
+                    username: req.body.username,
+                    email: req.body.email,
+                    password: req.body.password
+                })
+            }else {
+                user.updateAttributes({
+                    username: req.body.username
+                })
+            }
+        }
+        return models.Usuario.findAll().then(function (user) {
+             res.render('VerUsuario.html', {title: 'Listar Usuarios', resultado: user});
+         })
+     });
+    }
+    catch(ex){
+        console.error("Internal error:"+ex);
+        return next(ex);
+    }
+})
+
 
 //Delete user
 router.delete('/usuarios/:id', function(req,res,next){

@@ -55,8 +55,6 @@
     </div>
   </div>
 </nav>
-
-
   
    <h1><%=title%></h1>
 
@@ -75,10 +73,10 @@
   <% for (var i= 0;i<resultado.length;i++){ %>
   <tbody>
   <tr>
-    <td><%= resultado[i].id%></td>
-    <td><%= resultado[i].username%></td>
-    <td><%= resultado[i].password %></td>
-    <td><%= resultado[i].email %></td>
+    <td><%= resultado[i].id         %></td>
+    <td><%= resultado[i].username   %></td>
+    <td><%= resultado[i].password   %></td>
+    <td><%= resultado[i].email      %></td>
     <!--<td><%= resultado[i].rut%></td>-->
      <!--<td><form method="DELETE" action="/api/usuarios/<%= resultado[i].id %>?_method=DELETE"
                enctype="application/x-www-form-urlencoded">
@@ -86,7 +84,10 @@
           </form>
       </td> -->
     <td> <a href='/api/usuarios/<%= resultado[i].id %>?_method=DELETE'>
-        Eliminar</a> </td>
+        Eliminar</a>
+        <a href='/actualizarUsuario?_id=<%= resultado[i].id %>'>
+            Modificar</a> <!--/api/usuarios/<%= resultado[i].id %>?_method=PUT -->
+    </td>
   </tr>
   <% }%>
   </tbody>
