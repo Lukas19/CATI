@@ -1,0 +1,21 @@
+"use strict";
+var Sequelize = require('sequelize');
+module.exports = function(sequelize, DataTypes) {
+    var Rol = sequelize.define("Rol", {
+        permiso: DataTypes.STRING
+    }, {
+        timestamps: false,
+        classMethods: {
+            associate: function(models) {
+                Rol.belongsTo(models.Usuario, {
+                    onDelete: "CASCADE",
+                    foreignKey: {
+                        allowNull: false
+                    }
+                });
+            }
+        }
+    });
+
+    return Rol;
+};
