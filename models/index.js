@@ -7,7 +7,7 @@ var opts = {
         freezeTableName: true
     }
 }
-var sequelize = new Sequelize('adsw', 'root', '123456',opts);
+var sequelize = new Sequelize('adsw', 'root', 'fchacon',opts);
 var db        = {};
 
 fs

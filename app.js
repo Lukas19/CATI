@@ -7,7 +7,7 @@ var path 		= require('path');
 var mysql 		= require('mysql');
 var Usuario		= require('./models/usuario.js');
 var models 		= require("./models/index.js");
-var parse = require('csv-parse');
+var parse		= require('csv-parse');
 var morgan 		= require('morgan');
 var cookieParser = require('cookie-parser');
 var session		= require('express-session');
@@ -16,7 +16,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.engine('html', require('ejs').renderFile);
 
 
-app.use('/',require('./router/routes'));
+app.use('/',require('./router/routes.js'));
 
 /*var parser = parse({delimiter: ','}, function(err, data){
  console.log(data);

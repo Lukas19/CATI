@@ -88,6 +88,11 @@
     <!--<td> <a type="button" method="delete"
                 href='/api/usuarios/' + resultado[i].id>
         Eliminar</a> </td> -->
+    <td> <a href='/api/usuarios/<%= resultado[i].id %>?_method=DELETE'>
+      Eliminar</a>
+      <a href='/actualizarUsuario?_id=<%= resultado[i].id %>'>
+        Modificar</a> <!--/api/usuarios/<%= resultado[i].id %>?_method=PUT -->
+    </td>
   </tr>
   <% }%>
   </tbody>

@@ -1,25 +1,31 @@
 
-var express = require('express');
-var app = express();
-var passport = require('../config/passport');
-var fileUpload = require('express-fileupload');
+var express     = require('express');
+var app         = express();
+var passport    = require('../config/passport');
+var fileUpload  = require('express-fileupload');
 
-app.use(fileUpload());
+//app.use(fileUpload());
 
 app.use(function (req,res,next) {
     console.log("estoy en app.use");
+    if (req.path == '/upload'){
+        app.use(fileUpload());
+        console.log("activado upload");
+    }
     if (req.query._id != null) {
         console.log("no nulo: " + req.query._id);
     }
     next();
 });
 
+
+
 app.get('/', function(req, res){
     res.render('index.html', {title: 'Inicio de sesión'});
 });
 
 app.get('/verUsuario', function(req, res){
-    res.redirect('/api/usuarios')
+    res.redirect('/api/usuarios');
 });
 
 app.get('/crearUsuario', function(req, res){
@@ -41,17 +47,24 @@ app.get('/actualizarUsuario',function(req,res){
  dest: __dirname + '../public/uploads/',
  });*/
 
+app.get('/logged', function(req, res){
+    res.render('logged.html', {title: 'Logged'});
+});
+
 
 app.post('/upload', function(req, res) {
     var sampleFile;
 
-    //console.log(req.files);
+    console.log("me atore");
     //console.log(req.files.sampleFile.name);
-    if (!req.files.sampleFile.name) {
-        //res.send('No files were uploaded.');
+    /*if (req.files.sampleFile == null){
         return;
     }
 
+    if (!req.files.sampleFile.name) {
+        //res.send('No files were uploaded.');
+        return;
+    }*/
     sampleFile = req.files.sampleFile;
     sampleFile.mv('./public/uploads/' + req.files.sampleFile.name, function(err) {
         if (err) {
@@ -64,8 +77,6 @@ app.post('/upload', function(req, res) {
     res.render('index.html', {title: 'CATI'});
 });
 
-app.get('/logged', function(req, res){
-    res.render('logged.html', {title: 'tulin tulon'});
-});
 
-module.exports=app;
+
+module.exports = app;

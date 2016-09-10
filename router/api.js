@@ -20,6 +20,7 @@ router.use( function( req, res, next ) {
 		req.method = 'DELETE';
 		req.url = req.path;
 	}else if ( req.body._method == 'PUT' ) {
+		console.log("putttt");
 		req.method = 'PUT';
 		req.url = req.path;
 	}
@@ -80,27 +81,26 @@ try{
 
 //Update user
 router.put('/usuarios/:id', function(req,res,next){
+	console.log("router.put");
 	try{
 
 		models.Usuario.findOne({ where: {id:req.params.id} }).then(function (user) {
 			if(req.body.username){
-				if(req.body.email) {
+				if(req.body.email && req.body.password) {
 					user.updateAttributes({
 						username: req.body.username,
-						email: req.body.email
-					}).then(function (result) {
-						res.send(result);
+						email: req.body.email,
+						password: req.body.password
 					})
-				}
-				else {
+				}else {
 					user.updateAttributes({
 						username: req.body.username
-					}).then(function (result) {
-						res.send(result);
 					})
 				}
-
 			}
+			return models.Usuario.findAll().then(function (user) {
+				res.render('VerUsuario.html', {title: 'Listar Usuarios', resultado: user});
+			})
 		});
 	}
 	catch(ex){
@@ -115,7 +115,7 @@ router.delete('/usuarios/:id', function(req,res,next){
 	try{
 		models.Usuario.destroy({where: {id: req.params.id} }).then(function () {
 			return models.Usuario.findAll().then(function (user) {
-				res.json(user);
+				res.render('VerUsuario.html', {title: 'Listar Usuarios', resultado: user});
 			})
 		})
 	}
@@ -124,6 +124,7 @@ router.delete('/usuarios/:id', function(req,res,next){
 		return next(ex);
 	}
 });
+
 
 //Login
 router.post('/login', passport.authenticate('local-login', {
