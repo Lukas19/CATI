@@ -11,12 +11,14 @@ module.exports = function(sequelize, DataTypes) {
         }, {
             timestamps: false,
             instanceMethods: {
-                authenticate: function(password) {
+                authenticate: function (password) {
                     return (password === this.password);
+                },
+            },
+            classMethods:{
+                associate: function(models) {
+                      Admin.hasMany(models.Proyecto);
                 }
-//                  associate: function(models) {
-//                      Admin.hasMany(models.Rol)
-//              }
             }
         }
     );

@@ -3,9 +3,28 @@ var express  = require('express');
 var router	 = express.Router();
 var models   = require('../models');
 var passport = require('../config/passport.js');
+var util = require("util");
+var fs = require("fs");
 
 //Return router
 module.exports = router;
+
+router.post("/upload", function(req, res, next){
+    if (req.files) {
+        console.log(util.inspect(req.files));
+        if (req.files.myFile.size === 0) {
+            return next(new Error("Hey, first would you select a file?"));
+        }
+        fs.exists(req.files.myFile.path, function(exists) {
+            if(exists) {
+                res.end("Got your file!");
+            } else {
+                res.end("Well, there is no magic for those who don’t believe in it!");
+            }
+        });
+    }
+    res.redirect('/');
+});
 
 //Change method
 router.use( function( req, res, next ) {
@@ -61,7 +80,7 @@ router.get('/usuarios/:id', function(req, res, next) {
 				id: req.params.id
 			}
 		}).then(function (user) {
-			res.render('VerUsuario.html', {title: 'Listar Usuarios', resultado: user});
+			res.redirect('VerUsuario.html', {title: 'Listar Usuarios', resultado: user});
 		});
 	} catch (ex) {
 		console.error("Internal error:" + ex);
@@ -129,7 +148,7 @@ router.put('/usuarios/:id', function(req,res,next){
 				}
 			}
 			return models.Usuario.findAll().then(function (user) {
-				res.render('VerUsuario.html', {title: 'Listar Usuarios', resultado: user});
+				res.redirect('/api/usuarios');
 			})
 		});
 	}
@@ -159,7 +178,7 @@ router.put('/admins/:id', function(req,res,next){
                 }
             }
             return models.Admin.findAll().then(function (user) {
-                res.render('VerUsuario.html', {title: 'Listar Admins', resultado: user});
+                res.redirect('/api/admins');
             })
         });
     }
@@ -174,7 +193,7 @@ router.delete('/usuarios/:id', function(req,res,next){
 	try{
 		models.Usuario.destroy({where: {id: req.params.id} }).then(function () {
 			return models.Usuario.findAll().then(function (user) {
-				res.render('VerUsuario.html', {title: 'Listar Usuarios', resultado: user});
+                res.redirect('/api/usuarios');
 			})
 		})
 	}
@@ -189,7 +208,7 @@ router.delete('/admins/:id', function(req,res,next){
     try{
         models.Admin.destroy({where: {id: req.params.id} }).then(function () {
             return models.Admin.findAll().then(function (user) {
-                res.render('VerUsuario.html', {title: 'Listar Admin', resultado: user, target: 'admins'});
+                res.redirect('/api/admins');
             })
         })
     }

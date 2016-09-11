@@ -67,7 +67,7 @@ app.get('/logged', function(req, res){
 });
 
 
-app.post('/upload', function(req, res) {
+/*app.post('/upload', function(req, res) {
     var sampleFile;
 
     console.log("me atore");
@@ -79,7 +79,7 @@ app.post('/upload', function(req, res) {
     if (!req.files.sampleFile.name) {
         //res.send('No files were uploaded.');
         return;
-    }*/
+    }*//*
     sampleFile = req.files.sampleFile;
     sampleFile.mv('./public/uploads/' + req.files.sampleFile.name, function(err) {
         if (err) {
@@ -90,7 +90,7 @@ app.post('/upload', function(req, res) {
         }
     });
     res.render('index.html', {title: 'CATI'});
-});
+});*/
 
 app.get('/logout', function(req, res){
     console.log('logout');

@@ -6,29 +6,33 @@ var bodyParser 	= require('body-parser');
 var path 		= require('path');
 var mysql 		= require('mysql');
 var Usuario		= require('./models/usuario.js');
-var Admin 		= require('./models/admin.js');
 var models 		= require("./models/index.js");
 var parse		= require('csv-parse');
 var morgan 		= require('morgan');
 var cookieParser = require('cookie-parser');
 var session		= require('express-session');
+var multer      = require('multer');
+//var uploads     = require('./router/uploads');
 
 app.set('views', path.join(__dirname, 'views'));
 app.engine('html', require('ejs').renderFile);
 
+app.use('/',require('./router/routes'));
+//app.use('/uploads',uploads);
 
-app.use('/',require('./router/routes.js'));
-
-/*var parser = parse({delimiter: ','}, function(err, data){
- console.log(data);
+var parser = parse({delimiter: ','}, function(err, data){
+// console.log(data);
  });
- fs.createReadStream(__dirname+'/data.csv').pipe(parser);*/
+ //fs.createReadStream(__dirname+'/data.csv').pipe(parser);*/
 
 /*var nodeadmin = require('nodeadmin');
 app.use(nodeadmin(app));*/
 
 //Express
 app.use(bodyParser.urlencoded({extended: true }));
+app.use(multer({
+    dest: "./public/uploads/"
+}).single('sampleFile'));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(cookieParser());
@@ -50,3 +54,5 @@ models.sequelize.sync().then(function () {
 		console.log('Example app listening at http://%s:%s', host, port);
 	});
 });
+
+

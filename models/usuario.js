@@ -11,9 +11,11 @@ module.exports = function(sequelize, DataTypes) {
             authenticate: function(password) {
                 return (password === this.password);
             }
-//            associate: function(models) {
-//                Usuario.hasMany(models.Rol)
-//            }
+        },
+        classMethods:{
+            associate: function(models) {
+                Usuario.hasMany(models.Llamada);
+            }
         }
     }
     );
