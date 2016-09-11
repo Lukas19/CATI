@@ -92,6 +92,11 @@ app.post('/upload', function(req, res) {
     res.render('index.html', {title: 'CATI'});
 });
 
+app.get('/logout', function(req, res){
+    console.log('logout');
+    req.logout();
+    res.redirect('/');
+});
 
 
 module.exports = app;

@@ -200,7 +200,12 @@ router.delete('/admins/:id', function(req,res,next){
 });
 
 //Login
-router.post('/login', passport.authenticate('local-login', {
+router.post('/loginUsuario', passport.authenticate('login-usuario', {
+	successRedirect : '/logged', // redirect
+	failureRedirect : '/'
+}));
+
+router.post('/loginAdmin', passport.authenticate('login-admin', {
 	successRedirect : '/logged', // redirect
 	failureRedirect : '/'
 }));
