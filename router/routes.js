@@ -1,12 +1,19 @@
-
 var express     = require('express');
 var app         = express();
 var passport    = require('../config/passport');
 var fileUpload  = require('express-fileupload');
 
-//app.use(fileUpload());
+function isLogged(req, res, next) {
 
-app.use(function (req,res,next) {
+    // if user is authenticated in the session, carry on
+    if (req.isAuthenticated())
+        return next();
+
+    // if they aren't redirect them to the home page
+    res.redirect('/');
+}
+
+/*app.use(function (req,res,next) {
     console.log("estoy en app.use");
     if (req.path == '/upload'){
         app.use(fileUpload());
@@ -16,7 +23,7 @@ app.use(function (req,res,next) {
         console.log("no nulo: " + req.query._id);
     }
     next();
-});
+});*/
 
 
 
@@ -32,26 +39,26 @@ app.get('/verAdmin', function(req, res){
     res.redirect('/api/admins');
 });
 
-app.get('/crearAdmin', function(req, res){
+app.get('/crearAdmin', isLogged, function(req, res){
     res.render('CrearUsuario.html', {title: 'Registrar Admins', target: 'admins'});
 });
 
-app.get('/crearUsuario', function(req, res){
+app.get('/crearUsuario', isLogged, function(req, res){
     res.render('CrearUsuario.html', {title: 'Registrar Usuarios', target: 'usuarios'});
 });
 
-app.get('/subirDatos', function (req, res) {
+app.get('/subirDatos', isLogged, function (req, res) {
     res.render('SubirDatos.html');
 })
 
-app.get('/actualizarUsuario',function(req,res){
+app.get('/actualizarUsuario', isLogged, function(req,res){
     console.log("en app.get");
     //console.log(req.query._id);
     var id = req.query._id;
     res.render('ActualizarUsuario.html', {title: 'Actualizar Usuarios', id: id.toString(), target:'usuarios'});
 });
 
-app.get('/actualizarAdmin',function(req,res){
+app.get('/actualizarAdmin', isLogged, function(req,res){
     console.log("en app.get");
     //console.log(req.query._id);
     var id = req.query._id;
@@ -67,7 +74,7 @@ app.get('/logged', function(req, res){
 });
 
 
-/*app.post('/upload', function(req, res) {
+/*app.post('/upload', isLogged, function(req, res) {
     var sampleFile;
 
     console.log("me atore");
@@ -79,7 +86,7 @@ app.get('/logged', function(req, res){
     if (!req.files.sampleFile.name) {
         //res.send('No files were uploaded.');
         return;
-    }*//*
+    }
     sampleFile = req.files.sampleFile;
     sampleFile.mv('./public/uploads/' + req.files.sampleFile.name, function(err) {
         if (err) {
