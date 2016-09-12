@@ -3,8 +3,8 @@ var express  = require('express');
 var router	 = express.Router();
 var models   = require('../models');
 var passport = require('passport');
-var util = require('util');
-var fs = require('fs');
+var util 	 = require('util');
+var fs		 = require('fs');
 
 //Return router
 module.exports = router;
@@ -80,7 +80,7 @@ router.get('/usuarios/:id', function(req, res, next) {
 				id: req.params.id
 			}
 		}).then(function (user) {
-			res.render('VerUsuario.html', {title: 'Listar Usuarios', resultado: user});
+			res.redirect('/api/usuarios');
 		});
 	} catch (ex) {
 		console.error("Internal error:" + ex);
@@ -91,16 +91,11 @@ router.get('/usuarios/:id', function(req, res, next) {
 //POST crear usuario
 router.post('/usuarios', function(req,res,next){
 try{
-	console.log(req.body.permiso);
 	models.Usuario.create({
 		username: req.body.username,
 		password: req.body.password,
 		email: req.body.email
 	}).then(function (result) {
-		models.Rol.create({
-			permiso: req.body.permiso,
-			UsuarioId: result.id
-		});
 		res.redirect("/");
 	});
 	}
@@ -113,7 +108,6 @@ try{
 //POST crear admin
 router.post('/admins', function(req,res,next){
     try{
-        console.log(req.body.permiso);
         models.Admin.create({
             username: req.body.username,
             password: req.body.password,
@@ -148,7 +142,7 @@ router.put('/usuarios/:id', function(req,res,next){
 				}
 			}
 			return models.Usuario.findAll().then(function (user) {
-				res.render('VerUsuario.html', {title: 'Listar Usuarios', resultado: user});
+				res.redirect('/api/usuarios');
 			})
 		});
 	}
@@ -178,7 +172,7 @@ router.put('/admins/:id', function(req,res,next){
                 }
             }
             return models.Admin.findAll().then(function (user) {
-                res.render('VerUsuario.html', {title: 'Listar Admins', resultado: user});
+				res.redirect('/api/admins');
             })
         });
     }
@@ -193,7 +187,7 @@ router.delete('/usuarios/:id', function(req,res,next){
 	try{
 		models.Usuario.destroy({where: {id: req.params.id} }).then(function () {
 			return models.Usuario.findAll().then(function (user) {
-				res.render('VerUsuario.html', {title: 'Listar Usuarios', resultado: user});
+				res.redirect('/api/usuarios');
 			})
 		})
 	}
@@ -208,7 +202,7 @@ router.delete('/admins/:id', function(req,res,next){
     try{
         models.Admin.destroy({where: {id: req.params.id} }).then(function () {
             return models.Admin.findAll().then(function (user) {
-                res.render('VerUsuario.html', {title: 'Listar Admin', resultado: user, target: 'admins'});
+				res.redirect('/api/admins');
             })
         })
     }
