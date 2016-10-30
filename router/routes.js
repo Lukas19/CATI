@@ -69,8 +69,6 @@ app.get('/actualizarAdmin', isLogged, function(req,res){
     res.render('ActualizarUsuario.html', {title: 'Actualizar Admins', id: id.toString(), target: 'admins'});
 });
 
-
-
 app.get('/logged', function(req, res){
     res.render('logged.html', {title: 'Logged'});
 });

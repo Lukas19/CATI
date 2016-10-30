@@ -126,7 +126,6 @@ router.post('/admins', function(req,res,next){
 router.put('/usuarios/:id', function(req,res,next){
 	console.log("router.put");
 	try{
-
 		models.Usuario.findOne({ where: {id:req.params.id} }).then(function (user) {
 			if(req.body.username){
 				if(req.body.email && req.body.password) {
@@ -222,3 +221,4 @@ router.post('/loginAdmin', passport.authenticate('login-admin', {
 	successRedirect : '/logged',
 	failureRedirect : '/'
 }));
+
