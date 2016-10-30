@@ -43,12 +43,20 @@ app.get('/verAdmin', isLogged,  function(req, res){
     res.redirect('/api/admins');
 });
 
+app.get('/verProyecto', isLogged,  function(req, res){
+    res.redirect('/api/proyectos');
+});
+
 app.get('/crearAdmin', isLogged, function(req, res){
     res.render('CrearUsuario.html', {title: 'Registrar Admins', target: 'admins'});
 });
 
 app.get('/crearUsuario', isLogged, function(req, res){
     res.render('CrearUsuario.html', {title: 'Registrar Usuarios', target: 'usuarios'});
+});
+
+app.get('/crearProyecto', isLogged, function(req, res){
+    res.render('CrearProyecto.html', {title: 'Crear Proyecto'});
 });
 
 app.get('/subirDatos', isLogged, function (req, res) {
@@ -69,7 +77,11 @@ app.get('/actualizarAdmin', isLogged, function(req,res){
     res.render('ActualizarUsuario.html', {title: 'Actualizar Admins', id: id.toString(), target: 'admins'});
 });
 
-
+app.get('/actualizarProyecto', isLogged, function(req,res){
+    //console.log(req.query._id);
+    var id = req.query._id;
+    res.render('ActualizarProyecto.html', {title: 'Actualizar Proyectos', id: id.toString()});
+});
 
 app.get('/logged', function(req, res){
     res.render('logged.html', {title: 'Logged'});

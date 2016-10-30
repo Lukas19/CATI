@@ -32,7 +32,7 @@ router.use( function( req, res, next ) {
 	// and we checked for the requested query properties
 	// if _method was existed
 	// then we know, clients need to call DELETE request instead
-	console.log("time to change " + req.query._method);
+	//console.log("time to change " + req.query._method);
 	//console.log(req.body._method);
 	if ( req.query._method == 'DELETE' ) {
 		// change the original METHOD
@@ -52,6 +52,18 @@ router.get('/usuarios', function(req, res, next) {
 	try {
 		models.Usuario.findAll().then(function (user) {
 			res.render('VerUsuario.html', {title: 'Listar Usuarios', resultado: user});
+		});
+	} catch (ex) {
+		console.error("Internal error:" + ex);
+		return next(ex);
+	}
+});
+
+//GET proyectos
+router.get('/proyectos', function(req, res, next) {
+	try {
+		models.Proyecto.findAll().then(function (user) {
+			res.render('RDProyecto.html', {title: 'Listar Proyectos', resultado: user});
 		});
 	} catch (ex) {
 		console.error("Internal error:" + ex);
@@ -122,6 +134,23 @@ router.post('/admins', function(req,res,next){
     }
 });
 
+//POST crear proyecto
+router.post('/:id/proyectos/create', function(req,res,next){
+    console.log(req.params.id);
+    try{
+        models.Proyecto.create({
+            nombre: req.body.nombre,
+            AdminId: req.params.id
+        }).then(function (result) {
+            res.redirect("/");
+        });
+    }
+    catch(ex){
+        console.error("Internal error:"+ex);
+        return next(ex);
+    }
+});
+
 //Update user
 router.put('/usuarios/:id', function(req,res,next){
 	console.log("router.put");
@@ -150,6 +179,28 @@ router.put('/usuarios/:id', function(req,res,next){
 		console.error("Internal error:"+ex);
 		return next(ex);
 	}
+});
+
+//Update proyecto
+router.put('/proyectos/:id', function(req,res,next){
+    console.log("router.put");
+    try{
+
+        models.Proyecto.findOne({ where: {id:req.params.id} }).then(function (user) {
+            if(req.body.nombre){
+                user.updateAttributes({
+                    nombre: req.body.nombre
+                })
+            }
+            return models.Proyecto.findAll().then(function (user) {
+                res.redirect('/api/proyectos');
+            })
+        });
+    }
+    catch(ex){
+        console.error("Internal error:"+ex);
+        return next(ex);
+    }
 });
 
 //Update admin
@@ -195,6 +246,21 @@ router.delete('/usuarios/:id', function(req,res,next){
 		console.error("Internal error:"+ex);
 		return next(ex);
 	}
+});
+
+//Delete proyecto
+router.delete('/proyectos/:id', function(req,res,next){
+    try{
+        models.Proyecto.destroy({where: {id: req.params.id} }).then(function () {
+            return models.Proyecto.findAll().then(function (user) {
+                res.redirect('/api/proyectos');
+            })
+        })
+    }
+    catch(ex){
+        console.error("Internal error:"+ex);
+        return next(ex);
+    }
 });
 
 //Delete admin
