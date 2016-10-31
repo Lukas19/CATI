@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
+    "angular": "^1.5.8",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
@@ -22,7 +23,8 @@
     "mysql": "^2.11.1",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "sequelize": "^3.24.2",
+    "permission": "^1.0.4",
+    "sequelize": "^3.24.5",
     "util": "^0.10.3"
   }
 }

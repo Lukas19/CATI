@@ -1,0 +1,14 @@
+<html ng-app="call">
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="../controllers/call.js"></script>
+</head>
+<body ng-controller="CallController as encuestado" >
+<div ng-repeat = "numero in encuestado.contact">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <g:hangout render="createhangout"
+           invites="[{ id : '{{numero.encuestado}}', invite_type : 'PHONE' }]">
+    </g:hangout>
+</div>
+</body>
+</html>

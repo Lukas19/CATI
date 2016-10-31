@@ -61,7 +61,7 @@ app.get('/crearProyecto', isLogged, function(req, res){
 
 app.get('/subirDatos', isLogged, function (req, res) {
     res.render('SubirDatos.html');
-})
+});
 
 app.get('/actualizarUsuario', isLogged, function(req,res){
     console.log("en app.get");
@@ -82,6 +82,7 @@ app.get('/actualizarProyecto', isLogged, function(req,res){
     var id = req.query._id;
     res.render('ActualizarProyecto.html', {title: 'Actualizar Proyectos', id: id.toString()});
 });
+
 
 app.get('/logged', function(req, res){
     res.render('logged.html', {title: 'Logged'});

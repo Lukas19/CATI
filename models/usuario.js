@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
                 return (password === this.password);
             }
         },
-        classMethods:{
+        classMetUshods:{
             associate: function(models) {
                 Usuario.hasMany(models.Llamada);
             }
