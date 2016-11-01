@@ -2,6 +2,7 @@ var express     = require('express');
 var app         = express();
 var passport    = require('../config/passport');
 var fileUpload  = require('express-fileupload');
+var isAdmin = false;
 
 function isLogged(req, res, next) {
 
@@ -10,6 +11,13 @@ function isLogged(req, res, next) {
         return next();
 
     // if they aren't redirect them to the home page
+    res.redirect('/');
+}
+
+function isLoggedAdmin(req, res, next) {
+    if (req.isAuthenticated() && isAdmin)
+        return next();
+
     res.redirect('/');
 }
 
@@ -32,30 +40,30 @@ app.get('/', function(req, res){
 });
 
 app.get('/logAdmin', function(req, res){
-    res.render('index.html', {title: 'Inicio de sesión Admin'});
+    res.render('LoginAdmin.html', {title: 'Inicio de sesión Admin'});
 });
 
-app.get('/verUsuario', isLogged, function(req, res){
+app.get('/verUsuario', isLoggedAdmin, function(req, res){
     res.redirect('/api/usuarios');
 });
 
-app.get('/verAdmin', isLogged,  function(req, res){
+app.get('/verAdmin', isLoggedAdmin,  function(req, res){
     res.redirect('/api/admins');
 });
 
-app.get('/verProyecto', isLogged,  function(req, res){
+app.get('/verProyecto', isLoggedAdmin,  function(req, res){
     res.redirect('/api/proyectos');
 });
 
-app.get('/crearAdmin', isLogged, function(req, res){
+app.get('/crearAdmin', isLoggedAdmin, function(req, res){
     res.render('CrearUsuario.html', {title: 'Registrar Admins', target: 'admins'});
 });
 
-app.get('/crearUsuario', isLogged, function(req, res){
+app.get('/crearUsuario', isLoggedAdmin, function(req, res){
     res.render('CrearUsuario.html', {title: 'Registrar Usuarios', target: 'usuarios'});
 });
 
-app.get('/crearProyecto', isLogged, function(req, res){
+app.get('/crearProyecto', isLoggedAdmin, function(req, res){
     res.render('CrearProyecto.html', {title: 'Crear Proyecto'});
 });
 
@@ -63,21 +71,21 @@ app.get('/subirDatos', isLogged, function (req, res) {
     res.render('SubirDatos.html');
 });
 
-app.get('/actualizarUsuario', isLogged, function(req,res){
+app.get('/actualizarUsuario', isLoggedAdmin, function(req,res){
     console.log("en app.get");
     //console.log(req.query._id);
     var id = req.query._id;
     res.render('ActualizarUsuario.html', {title: 'Actualizar Usuarios', id: id.toString(), target:'usuarios'});
 });
 
-app.get('/actualizarAdmin', isLogged, function(req,res){
+app.get('/actualizarAdmin', isLoggedAdmin, function(req,res){
     console.log("en app.get");
     //console.log(req.query._id);
     var id = req.query._id;
     res.render('ActualizarUsuario.html', {title: 'Actualizar Admins', id: id.toString(), target: 'admins'});
 });
 
-app.get('/actualizarProyecto', isLogged, function(req,res){
+app.get('/actualizarProyecto', isLoggedAdmin, function(req,res){
     //console.log(req.query._id);
     var id = req.query._id;
     res.render('ActualizarProyecto.html', {title: 'Actualizar Proyectos', id: id.toString()});
@@ -88,11 +96,18 @@ app.get('/llamar', isLogged, function(req, res){
 });
 
 app.get('/logged', function(req, res){
+    isAdmin = false;
     res.render('logged.html', {title: 'Logged'});
 });
 
 
+app.get('/loggedAdmin', function(req, res){
+    isAdmin = true;
+    res.render('loggedAdmin.html', {title: 'Logged'});
+});
+
 app.get('/logout', function(req, res){
+    isAdmin = false;
     console.log('logout');
     req.logout();
     res.redirect('/');
