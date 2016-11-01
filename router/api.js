@@ -279,12 +279,12 @@ router.delete('/admins/:id', function(req,res,next){
 
 //Login
 router.post('/loginUsuario', passport.authenticate('login-usuario', {
-	successRedirect : '/logged',
+    successRedirect : '/logged',
 	failureRedirect : '/'
 }));
 
 router.post('/loginAdmin', passport.authenticate('login-admin', {
 	successRedirect : '/logged',
-	failureRedirect : '/'
+	failureRedirect : '/logAdmin'
 }));
 

@@ -83,11 +83,13 @@ app.get('/actualizarProyecto', isLogged, function(req,res){
     res.render('ActualizarProyecto.html', {title: 'Actualizar Proyectos', id: id.toString()});
 });
 
+app.get('/llamar', isLogged, function(req, res){
+    res.render('Call.html');
+});
 
 app.get('/logged', function(req, res){
     res.render('logged.html', {title: 'Logged'});
 });
-
 
 
 app.get('/logout', function(req, res){
