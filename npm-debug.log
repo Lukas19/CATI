@@ -1,0 +1,1694 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'pg-native',
+1 verbose cli   '-g' ]
+2 info using npm@3.10.8
+3 info using node@v6.9.1
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData pg-native
+8 silly fetchNamedPackageData pg-native
+9 silly mapToRegistry name pg-native
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'pg-native',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   escapedName: 'pg-native',
+12 silly mapToRegistry   name: 'pg-native',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri https://registry.npmjs.org/pg-native
+14 verbose request uri https://registry.npmjs.org/pg-native
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 4:38:11 PM
+17 verbose request id 13b03c7c0280bfbf
+18 http request GET https://registry.npmjs.org/pg-native
+19 http 200 https://registry.npmjs.org/pg-native
+20 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+20 verbose headers   etag: '"985C40AMVZNTRMLEQ8KI4DQJ6"',
+20 verbose headers   'content-type': 'application/json',
+20 verbose headers   'content-encoding': 'gzip',
+20 verbose headers   'cache-control': 'max-age=300',
+20 verbose headers   'content-length': '7848',
+20 verbose headers   'accept-ranges': 'bytes',
+20 verbose headers   date: 'Mon, 31 Oct 2016 19:38:12 GMT',
+20 verbose headers   via: '1.1 varnish',
+20 verbose headers   age: '0',
+20 verbose headers   connection: 'keep-alive',
+20 verbose headers   'x-served-by': 'cache-gru7126-GRU',
+20 verbose headers   'x-cache': 'HIT',
+20 verbose headers   'x-cache-hits': '1',
+20 verbose headers   'x-timer': 'S1477942692.357892,VS0,VE594',
+20 verbose headers   vary: 'Accept-Encoding' }
+21 silly get cb [ 200,
+21 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+21 silly get     etag: '"985C40AMVZNTRMLEQ8KI4DQJ6"',
+21 silly get     'content-type': 'application/json',
+21 silly get     'content-encoding': 'gzip',
+21 silly get     'cache-control': 'max-age=300',
+21 silly get     'content-length': '7848',
+21 silly get     'accept-ranges': 'bytes',
+21 silly get     date: 'Mon, 31 Oct 2016 19:38:12 GMT',
+21 silly get     via: '1.1 varnish',
+21 silly get     age: '0',
+21 silly get     connection: 'keep-alive',
+21 silly get     'x-served-by': 'cache-gru7126-GRU',
+21 silly get     'x-cache': 'HIT',
+21 silly get     'x-cache-hits': '1',
+21 silly get     'x-timer': 'S1477942692.357892,VS0,VE594',
+21 silly get     vary: 'Accept-Encoding' } ]
+22 verbose get saving pg-native to /Users/lukaszamora/.npm/registry.npmjs.org/pg-native/.cache.json
+23 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+24 silly install normalizeTree
+25 silly loadCurrentTree Finishing
+26 silly loadIdealTree Starting
+27 silly install loadIdealTree
+28 silly cloneCurrentTree Starting
+29 silly install cloneCurrentTreeToIdealTree
+30 silly cloneCurrentTree Finishing
+31 silly loadShrinkwrap Starting
+32 silly install loadShrinkwrap
+33 silly loadShrinkwrap Finishing
+34 silly loadAllDepsIntoIdealTree Starting
+35 silly install loadAllDepsIntoIdealTree
+36 silly resolveWithNewModule pg-native@1.10.0 checking installable status
+37 silly cache add args [ 'pg-native', null ]
+38 verbose cache add spec pg-native
+39 silly cache add parsed spec Result {
+39 silly cache add   raw: 'pg-native',
+39 silly cache add   scope: null,
+39 silly cache add   escapedName: 'pg-native',
+39 silly cache add   name: 'pg-native',
+39 silly cache add   rawSpec: '',
+39 silly cache add   spec: 'latest',
+39 silly cache add   type: 'tag' }
+40 silly addNamed pg-native@latest
+41 verbose addNamed "latest" is being treated as a dist-tag for pg-native
+42 info addNameTag [ 'pg-native', 'latest' ]
+43 silly mapToRegistry name pg-native
+44 silly mapToRegistry using default registry
+45 silly mapToRegistry registry https://registry.npmjs.org/
+46 silly mapToRegistry data Result {
+46 silly mapToRegistry   raw: 'pg-native',
+46 silly mapToRegistry   scope: null,
+46 silly mapToRegistry   escapedName: 'pg-native',
+46 silly mapToRegistry   name: 'pg-native',
+46 silly mapToRegistry   rawSpec: '',
+46 silly mapToRegistry   spec: 'latest',
+46 silly mapToRegistry   type: 'tag' }
+47 silly mapToRegistry uri https://registry.npmjs.org/pg-native
+48 verbose addNameTag registry:https://registry.npmjs.org/pg-native not in flight; fetching
+49 verbose get https://registry.npmjs.org/pg-native not expired, no request
+50 silly addNameTag next cb for pg-native with tag latest
+51 silly addNamed pg-native@1.10.0
+52 verbose addNamed "1.10.0" is a plain semver version for pg-native
+53 silly mapToRegistry name pg-native
+54 silly mapToRegistry using default registry
+55 silly mapToRegistry registry https://registry.npmjs.org/
+56 silly mapToRegistry data Result {
+56 silly mapToRegistry   raw: 'pg-native',
+56 silly mapToRegistry   scope: null,
+56 silly mapToRegistry   escapedName: 'pg-native',
+56 silly mapToRegistry   name: 'pg-native',
+56 silly mapToRegistry   rawSpec: '',
+56 silly mapToRegistry   spec: 'latest',
+56 silly mapToRegistry   type: 'tag' }
+57 silly mapToRegistry uri https://registry.npmjs.org/pg-native
+58 verbose addRemoteTarball https://registry.npmjs.org/pg-native/-/pg-native-1.10.0.tgz not in flight; adding
+59 verbose addRemoteTarball [ 'https://registry.npmjs.org/pg-native/-/pg-native-1.10.0.tgz',
+59 verbose addRemoteTarball   'abe299214afa2be51db5f5104e14770c738230fd' ]
+60 info retry fetch attempt 1 at 4:38:13 PM
+61 info attempt registry request try #1 at 4:38:13 PM
+62 http fetch GET https://registry.npmjs.org/pg-native/-/pg-native-1.10.0.tgz
+63 http fetch 200 https://registry.npmjs.org/pg-native/-/pg-native-1.10.0.tgz
+64 silly fetchAndShaCheck shasum abe299214afa2be51db5f5104e14770c738230fd
+65 verbose addTmpTarball /var/folders/t8/xzd1431j4b34nxdlg12m3jc40000gn/T/npm-12225-2e8b3931/registry.npmjs.org/pg-native/-/pg-native-1.10.0.tgz not in flight; adding
+66 verbose addTmpTarball already have metadata; skipping unpack for pg-native@1.10.0
+67 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+68 silly cache afterAdd pg-native@1.10.0
+69 verbose afterAdd /Users/lukaszamora/.npm/pg-native/1.10.0/package/package.json not in flight; writing
+70 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+71 verbose afterAdd /Users/lukaszamora/.npm/pg-native/1.10.0/package/package.json written
+72 silly fetchNamedPackageData libpq
+73 silly mapToRegistry name libpq
+74 silly mapToRegistry using default registry
+75 silly mapToRegistry registry https://registry.npmjs.org/
+76 silly mapToRegistry data Result {
+76 silly mapToRegistry   raw: 'libpq',
+76 silly mapToRegistry   scope: null,
+76 silly mapToRegistry   escapedName: 'libpq',
+76 silly mapToRegistry   name: 'libpq',
+76 silly mapToRegistry   rawSpec: '',
+76 silly mapToRegistry   spec: 'latest',
+76 silly mapToRegistry   type: 'tag' }
+77 silly mapToRegistry uri https://registry.npmjs.org/libpq
+78 silly fetchNamedPackageData pg-types
+79 silly mapToRegistry name pg-types
+80 silly mapToRegistry using default registry
+81 silly mapToRegistry registry https://registry.npmjs.org/
+82 silly mapToRegistry data Result {
+82 silly mapToRegistry   raw: 'pg-types',
+82 silly mapToRegistry   scope: null,
+82 silly mapToRegistry   escapedName: 'pg-types',
+82 silly mapToRegistry   name: 'pg-types',
+82 silly mapToRegistry   rawSpec: '',
+82 silly mapToRegistry   spec: 'latest',
+82 silly mapToRegistry   type: 'tag' }
+83 silly mapToRegistry uri https://registry.npmjs.org/pg-types
+84 silly fetchNamedPackageData readable-stream
+85 silly mapToRegistry name readable-stream
+86 silly mapToRegistry using default registry
+87 silly mapToRegistry registry https://registry.npmjs.org/
+88 silly mapToRegistry data Result {
+88 silly mapToRegistry   raw: 'readable-stream',
+88 silly mapToRegistry   scope: null,
+88 silly mapToRegistry   escapedName: 'readable-stream',
+88 silly mapToRegistry   name: 'readable-stream',
+88 silly mapToRegistry   rawSpec: '',
+88 silly mapToRegistry   spec: 'latest',
+88 silly mapToRegistry   type: 'tag' }
+89 silly mapToRegistry uri https://registry.npmjs.org/readable-stream
+90 verbose request uri https://registry.npmjs.org/libpq
+91 verbose request no auth needed
+92 info attempt registry request try #1 at 4:38:13 PM
+93 http request GET https://registry.npmjs.org/libpq
+94 verbose request uri https://registry.npmjs.org/pg-types
+95 verbose request no auth needed
+96 info attempt registry request try #1 at 4:38:13 PM
+97 verbose etag "3S1GJ0XK5L0WUMKE99SRPVCWB"
+98 http request GET https://registry.npmjs.org/pg-types
+99 verbose request uri https://registry.npmjs.org/readable-stream
+100 verbose request no auth needed
+101 info attempt registry request try #1 at 4:38:13 PM
+102 verbose etag "CCKCVM7AJRG2NFRFL5SINMT9N"
+103 http request GET https://registry.npmjs.org/readable-stream
+104 http 304 https://registry.npmjs.org/readable-stream
+105 verbose headers { date: 'Mon, 31 Oct 2016 19:38:13 GMT',
+105 verbose headers   via: '1.1 varnish',
+105 verbose headers   'cache-control': 'max-age=300',
+105 verbose headers   etag: '"CCKCVM7AJRG2NFRFL5SINMT9N"',
+105 verbose headers   age: '253',
+105 verbose headers   connection: 'keep-alive',
+105 verbose headers   'x-served-by': 'cache-gru7120-GRU',
+105 verbose headers   'x-cache': 'HIT',
+105 verbose headers   'x-cache-hits': '26',
+105 verbose headers   'x-timer': 'S1477942693.518086,VS0,VE0',
+105 verbose headers   vary: 'Accept-Encoding' }
+106 silly get cb [ 304,
+106 silly get   { date: 'Mon, 31 Oct 2016 19:38:13 GMT',
+106 silly get     via: '1.1 varnish',
+106 silly get     'cache-control': 'max-age=300',
+106 silly get     etag: '"CCKCVM7AJRG2NFRFL5SINMT9N"',
+106 silly get     age: '253',
+106 silly get     connection: 'keep-alive',
+106 silly get     'x-served-by': 'cache-gru7120-GRU',
+106 silly get     'x-cache': 'HIT',
+106 silly get     'x-cache-hits': '26',
+106 silly get     'x-timer': 'S1477942693.518086,VS0,VE0',
+106 silly get     vary: 'Accept-Encoding' } ]
+107 verbose etag https://registry.npmjs.org/readable-stream from cache
+108 verbose get saving readable-stream to /Users/lukaszamora/.npm/registry.npmjs.org/readable-stream/.cache.json
+109 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+110 http 304 https://registry.npmjs.org/pg-types
+111 verbose headers { date: 'Mon, 31 Oct 2016 19:38:13 GMT',
+111 verbose headers   via: '1.1 varnish',
+111 verbose headers   'cache-control': 'max-age=300',
+111 verbose headers   etag: '"3S1GJ0XK5L0WUMKE99SRPVCWB"',
+111 verbose headers   age: '182',
+111 verbose headers   connection: 'keep-alive',
+111 verbose headers   'x-served-by': 'cache-gru7120-GRU',
+111 verbose headers   'x-cache': 'HIT',
+111 verbose headers   'x-cache-hits': '2',
+111 verbose headers   'x-timer': 'S1477942693.518643,VS0,VE0',
+111 verbose headers   vary: 'Accept-Encoding' }
+112 silly get cb [ 304,
+112 silly get   { date: 'Mon, 31 Oct 2016 19:38:13 GMT',
+112 silly get     via: '1.1 varnish',
+112 silly get     'cache-control': 'max-age=300',
+112 silly get     etag: '"3S1GJ0XK5L0WUMKE99SRPVCWB"',
+112 silly get     age: '182',
+112 silly get     connection: 'keep-alive',
+112 silly get     'x-served-by': 'cache-gru7120-GRU',
+112 silly get     'x-cache': 'HIT',
+112 silly get     'x-cache-hits': '2',
+112 silly get     'x-timer': 'S1477942693.518643,VS0,VE0',
+112 silly get     vary: 'Accept-Encoding' } ]
+113 verbose etag https://registry.npmjs.org/pg-types from cache
+114 verbose get saving pg-types to /Users/lukaszamora/.npm/registry.npmjs.org/pg-types/.cache.json
+115 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+116 silly resolveWithNewModule pg-types@1.6.0 checking installable status
+117 silly cache add args [ 'pg-types@1.6.0', null ]
+118 verbose cache add spec pg-types@1.6.0
+119 silly cache add parsed spec Result {
+119 silly cache add   raw: 'pg-types@1.6.0',
+119 silly cache add   scope: null,
+119 silly cache add   escapedName: 'pg-types',
+119 silly cache add   name: 'pg-types',
+119 silly cache add   rawSpec: '1.6.0',
+119 silly cache add   spec: '1.6.0',
+119 silly cache add   type: 'version' }
+120 silly addNamed pg-types@1.6.0
+121 verbose addNamed "1.6.0" is a plain semver version for pg-types
+122 silly mapToRegistry name pg-types
+123 silly mapToRegistry using default registry
+124 silly mapToRegistry registry https://registry.npmjs.org/
+125 silly mapToRegistry data Result {
+125 silly mapToRegistry   raw: 'pg-types',
+125 silly mapToRegistry   scope: null,
+125 silly mapToRegistry   escapedName: 'pg-types',
+125 silly mapToRegistry   name: 'pg-types',
+125 silly mapToRegistry   rawSpec: '',
+125 silly mapToRegistry   spec: 'latest',
+125 silly mapToRegistry   type: 'tag' }
+126 silly mapToRegistry uri https://registry.npmjs.org/pg-types
+127 verbose addNameVersion registry:https://registry.npmjs.org/pg-types not in flight; fetching
+128 silly resolveWithNewModule readable-stream@1.0.31 checking installable status
+129 silly cache add args [ 'readable-stream@1.0.31', null ]
+130 verbose cache add spec readable-stream@1.0.31
+131 silly cache add parsed spec Result {
+131 silly cache add   raw: 'readable-stream@1.0.31',
+131 silly cache add   scope: null,
+131 silly cache add   escapedName: 'readable-stream',
+131 silly cache add   name: 'readable-stream',
+131 silly cache add   rawSpec: '1.0.31',
+131 silly cache add   spec: '1.0.31',
+131 silly cache add   type: 'version' }
+132 silly addNamed readable-stream@1.0.31
+133 verbose addNamed "1.0.31" is a plain semver version for readable-stream
+134 silly mapToRegistry name readable-stream
+135 silly mapToRegistry using default registry
+136 silly mapToRegistry registry https://registry.npmjs.org/
+137 silly mapToRegistry data Result {
+137 silly mapToRegistry   raw: 'readable-stream',
+137 silly mapToRegistry   scope: null,
+137 silly mapToRegistry   escapedName: 'readable-stream',
+137 silly mapToRegistry   name: 'readable-stream',
+137 silly mapToRegistry   rawSpec: '',
+137 silly mapToRegistry   spec: 'latest',
+137 silly mapToRegistry   type: 'tag' }
+138 silly mapToRegistry uri https://registry.npmjs.org/readable-stream
+139 verbose addNameVersion registry:https://registry.npmjs.org/readable-stream not in flight; fetching
+140 verbose get https://registry.npmjs.org/pg-types not expired, no request
+141 verbose get https://registry.npmjs.org/readable-stream not expired, no request
+142 silly mapToRegistry name pg-types
+143 silly mapToRegistry using default registry
+144 silly mapToRegistry registry https://registry.npmjs.org/
+145 silly mapToRegistry data Result {
+145 silly mapToRegistry   raw: 'pg-types',
+145 silly mapToRegistry   scope: null,
+145 silly mapToRegistry   escapedName: 'pg-types',
+145 silly mapToRegistry   name: 'pg-types',
+145 silly mapToRegistry   rawSpec: '',
+145 silly mapToRegistry   spec: 'latest',
+145 silly mapToRegistry   type: 'tag' }
+146 silly mapToRegistry uri https://registry.npmjs.org/pg-types
+147 verbose addRemoteTarball https://registry.npmjs.org/pg-types/-/pg-types-1.6.0.tgz not in flight; adding
+148 verbose addRemoteTarball [ 'https://registry.npmjs.org/pg-types/-/pg-types-1.6.0.tgz',
+148 verbose addRemoteTarball   '3872a0f199143025497f4ee2a65fdaf00d7ea8b3' ]
+149 http 200 https://registry.npmjs.org/libpq
+150 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+150 verbose headers   etag: '"7EK05DT4ALA69M6FTMVE236GS"',
+150 verbose headers   'content-type': 'application/json',
+150 verbose headers   'content-encoding': 'gzip',
+150 verbose headers   'cache-control': 'max-age=300',
+150 verbose headers   'content-length': '11888',
+150 verbose headers   'accept-ranges': 'bytes',
+150 verbose headers   date: 'Mon, 31 Oct 2016 19:38:13 GMT',
+150 verbose headers   via: '1.1 varnish',
+150 verbose headers   age: '0',
+150 verbose headers   connection: 'keep-alive',
+150 verbose headers   'x-served-by': 'cache-gru7126-GRU',
+150 verbose headers   'x-cache': 'HIT',
+150 verbose headers   'x-cache-hits': '1',
+150 verbose headers   'x-timer': 'S1477942693.305328,VS0,VE167',
+150 verbose headers   vary: 'Accept-Encoding' }
+151 silly get cb [ 200,
+151 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+151 silly get     etag: '"7EK05DT4ALA69M6FTMVE236GS"',
+151 silly get     'content-type': 'application/json',
+151 silly get     'content-encoding': 'gzip',
+151 silly get     'cache-control': 'max-age=300',
+151 silly get     'content-length': '11888',
+151 silly get     'accept-ranges': 'bytes',
+151 silly get     date: 'Mon, 31 Oct 2016 19:38:13 GMT',
+151 silly get     via: '1.1 varnish',
+151 silly get     age: '0',
+151 silly get     connection: 'keep-alive',
+151 silly get     'x-served-by': 'cache-gru7126-GRU',
+151 silly get     'x-cache': 'HIT',
+151 silly get     'x-cache-hits': '1',
+151 silly get     'x-timer': 'S1477942693.305328,VS0,VE167',
+151 silly get     vary: 'Accept-Encoding' } ]
+152 verbose get saving libpq to /Users/lukaszamora/.npm/registry.npmjs.org/libpq/.cache.json
+153 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+154 info retry fetch attempt 1 at 4:38:13 PM
+155 info attempt registry request try #1 at 4:38:13 PM
+156 http fetch GET https://registry.npmjs.org/pg-types/-/pg-types-1.6.0.tgz
+157 silly resolveWithNewModule libpq@1.8.5 checking installable status
+158 silly cache add args [ 'libpq@^1.7.0', null ]
+159 verbose cache add spec libpq@^1.7.0
+160 silly cache add parsed spec Result {
+160 silly cache add   raw: 'libpq@^1.7.0',
+160 silly cache add   scope: null,
+160 silly cache add   escapedName: 'libpq',
+160 silly cache add   name: 'libpq',
+160 silly cache add   rawSpec: '^1.7.0',
+160 silly cache add   spec: '>=1.7.0 <2.0.0',
+160 silly cache add   type: 'range' }
+161 silly addNamed libpq@>=1.7.0 <2.0.0
+162 verbose addNamed ">=1.7.0 <2.0.0" is a valid semver range for libpq
+163 silly addNameRange { name: 'libpq', range: '>=1.7.0 <2.0.0', hasData: false }
+164 silly mapToRegistry name libpq
+165 silly mapToRegistry using default registry
+166 silly mapToRegistry registry https://registry.npmjs.org/
+167 silly mapToRegistry data Result {
+167 silly mapToRegistry   raw: 'libpq',
+167 silly mapToRegistry   scope: null,
+167 silly mapToRegistry   escapedName: 'libpq',
+167 silly mapToRegistry   name: 'libpq',
+167 silly mapToRegistry   rawSpec: '',
+167 silly mapToRegistry   spec: 'latest',
+167 silly mapToRegistry   type: 'tag' }
+168 silly mapToRegistry uri https://registry.npmjs.org/libpq
+169 verbose addNameRange registry:https://registry.npmjs.org/libpq not in flight; fetching
+170 silly cache afterAdd readable-stream@1.0.31
+171 verbose afterAdd /Users/lukaszamora/.npm/readable-stream/1.0.31/package/package.json not in flight; writing
+172 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+173 verbose get https://registry.npmjs.org/libpq not expired, no request
+174 silly addNameRange number 2 { name: 'libpq', range: '>=1.7.0 <2.0.0', hasData: true }
+175 silly addNameRange versions [ 'libpq',
+175 silly addNameRange   [ '0.2.0',
+175 silly addNameRange     '0.2.1',
+175 silly addNameRange     '0.2.2',
+175 silly addNameRange     '0.2.3',
+175 silly addNameRange     '0.2.4',
+175 silly addNameRange     '0.2.5',
+175 silly addNameRange     '0.3.0',
+175 silly addNameRange     '0.4.0',
+175 silly addNameRange     '0.4.1',
+175 silly addNameRange     '0.5.0',
+175 silly addNameRange     '0.5.1',
+175 silly addNameRange     '0.5.2',
+175 silly addNameRange     '0.5.3',
+175 silly addNameRange     '1.0.0',
+175 silly addNameRange     '1.0.1',
+175 silly addNameRange     '1.1.0',
+175 silly addNameRange     '1.2.0',
+175 silly addNameRange     '1.2.1',
+175 silly addNameRange     '1.3.0',
+175 silly addNameRange     '1.3.1',
+175 silly addNameRange     '1.4.0',
+175 silly addNameRange     '1.4.1',
+175 silly addNameRange     '1.4.2',
+175 silly addNameRange     '1.5.1',
+175 silly addNameRange     '1.6.0',
+175 silly addNameRange     '1.6.1',
+175 silly addNameRange     '1.6.2',
+175 silly addNameRange     '1.6.3',
+175 silly addNameRange     '1.6.4',
+175 silly addNameRange     '1.7.0',
+175 silly addNameRange     '1.8.0',
+175 silly addNameRange     '1.8.1',
+175 silly addNameRange     '1.8.2',
+175 silly addNameRange     '1.8.3',
+175 silly addNameRange     '1.8.4',
+175 silly addNameRange     '1.8.5' ] ]
+176 silly addNamed libpq@1.8.5
+177 verbose addNamed "1.8.5" is a plain semver version for libpq
+178 silly mapToRegistry name libpq
+179 silly mapToRegistry using default registry
+180 silly mapToRegistry registry https://registry.npmjs.org/
+181 silly mapToRegistry data Result {
+181 silly mapToRegistry   raw: 'libpq',
+181 silly mapToRegistry   scope: null,
+181 silly mapToRegistry   escapedName: 'libpq',
+181 silly mapToRegistry   name: 'libpq',
+181 silly mapToRegistry   rawSpec: '',
+181 silly mapToRegistry   spec: 'latest',
+181 silly mapToRegistry   type: 'tag' }
+182 silly mapToRegistry uri https://registry.npmjs.org/libpq
+183 verbose addRemoteTarball https://registry.npmjs.org/libpq/-/libpq-1.8.5.tgz not in flight; adding
+184 verbose addRemoteTarball [ 'https://registry.npmjs.org/libpq/-/libpq-1.8.5.tgz',
+184 verbose addRemoteTarball   '9ef5bb509e1658908c19474088031db3dc7d4e48' ]
+185 info retry fetch attempt 1 at 4:38:13 PM
+186 info attempt registry request try #1 at 4:38:13 PM
+187 http fetch GET https://registry.npmjs.org/libpq/-/libpq-1.8.5.tgz
+188 verbose afterAdd /Users/lukaszamora/.npm/readable-stream/1.0.31/package/package.json written
+189 http fetch 200 https://registry.npmjs.org/pg-types/-/pg-types-1.6.0.tgz
+190 http fetch 200 https://registry.npmjs.org/libpq/-/libpq-1.8.5.tgz
+191 silly fetchAndShaCheck shasum 3872a0f199143025497f4ee2a65fdaf00d7ea8b3
+192 verbose addTmpTarball /var/folders/t8/xzd1431j4b34nxdlg12m3jc40000gn/T/npm-12225-2e8b3931/registry.npmjs.org/pg-types/-/pg-types-1.6.0.tgz not in flight; adding
+193 verbose addTmpTarball already have metadata; skipping unpack for pg-types@1.6.0
+194 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+195 silly cache afterAdd pg-types@1.6.0
+196 verbose afterAdd /Users/lukaszamora/.npm/pg-types/1.6.0/package/package.json not in flight; writing
+197 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+198 verbose afterAdd /Users/lukaszamora/.npm/pg-types/1.6.0/package/package.json written
+199 silly fetchAndShaCheck shasum 9ef5bb509e1658908c19474088031db3dc7d4e48
+200 verbose addTmpTarball /var/folders/t8/xzd1431j4b34nxdlg12m3jc40000gn/T/npm-12225-2e8b3931/registry.npmjs.org/libpq/-/libpq-1.8.5.tgz not in flight; adding
+201 verbose addTmpTarball already have metadata; skipping unpack for libpq@1.8.5
+202 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+203 silly cache afterAdd libpq@1.8.5
+204 verbose afterAdd /Users/lukaszamora/.npm/libpq/1.8.5/package/package.json not in flight; writing
+205 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+206 verbose afterAdd /Users/lukaszamora/.npm/libpq/1.8.5/package/package.json written
+207 silly fetchNamedPackageData nan
+208 silly mapToRegistry name nan
+209 silly mapToRegistry using default registry
+210 silly mapToRegistry registry https://registry.npmjs.org/
+211 silly mapToRegistry data Result {
+211 silly mapToRegistry   raw: 'nan',
+211 silly mapToRegistry   scope: null,
+211 silly mapToRegistry   escapedName: 'nan',
+211 silly mapToRegistry   name: 'nan',
+211 silly mapToRegistry   rawSpec: '',
+211 silly mapToRegistry   spec: 'latest',
+211 silly mapToRegistry   type: 'tag' }
+212 silly mapToRegistry uri https://registry.npmjs.org/nan
+213 silly fetchNamedPackageData bindings
+214 silly mapToRegistry name bindings
+215 silly mapToRegistry using default registry
+216 silly mapToRegistry registry https://registry.npmjs.org/
+217 silly mapToRegistry data Result {
+217 silly mapToRegistry   raw: 'bindings',
+217 silly mapToRegistry   scope: null,
+217 silly mapToRegistry   escapedName: 'bindings',
+217 silly mapToRegistry   name: 'bindings',
+217 silly mapToRegistry   rawSpec: '',
+217 silly mapToRegistry   spec: 'latest',
+217 silly mapToRegistry   type: 'tag' }
+218 silly mapToRegistry uri https://registry.npmjs.org/bindings
+219 verbose request uri https://registry.npmjs.org/nan
+220 verbose request no auth needed
+221 info attempt registry request try #1 at 4:38:13 PM
+222 http request GET https://registry.npmjs.org/nan
+223 verbose request uri https://registry.npmjs.org/bindings
+224 verbose request no auth needed
+225 info attempt registry request try #1 at 4:38:13 PM
+226 http request GET https://registry.npmjs.org/bindings
+227 http 200 https://registry.npmjs.org/nan
+228 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+228 verbose headers   etag: '"2QXFPVXUU9DUUTAACVV4FOU2Z"',
+228 verbose headers   'content-type': 'application/json',
+228 verbose headers   'content-encoding': 'gzip',
+228 verbose headers   'cache-control': 'max-age=300',
+228 verbose headers   'content-length': '17179',
+228 verbose headers   'accept-ranges': 'bytes',
+228 verbose headers   date: 'Mon, 31 Oct 2016 19:38:13 GMT',
+228 verbose headers   via: '1.1 varnish',
+228 verbose headers   age: '215',
+228 verbose headers   connection: 'keep-alive',
+228 verbose headers   'x-served-by': 'cache-gru7126-GRU',
+228 verbose headers   'x-cache': 'HIT',
+228 verbose headers   'x-cache-hits': '3',
+228 verbose headers   'x-timer': 'S1477942693.976487,VS0,VE0',
+228 verbose headers   vary: 'Accept-Encoding' }
+229 silly get cb [ 200,
+229 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+229 silly get     etag: '"2QXFPVXUU9DUUTAACVV4FOU2Z"',
+229 silly get     'content-type': 'application/json',
+229 silly get     'content-encoding': 'gzip',
+229 silly get     'cache-control': 'max-age=300',
+229 silly get     'content-length': '17179',
+229 silly get     'accept-ranges': 'bytes',
+229 silly get     date: 'Mon, 31 Oct 2016 19:38:13 GMT',
+229 silly get     via: '1.1 varnish',
+229 silly get     age: '215',
+229 silly get     connection: 'keep-alive',
+229 silly get     'x-served-by': 'cache-gru7126-GRU',
+229 silly get     'x-cache': 'HIT',
+229 silly get     'x-cache-hits': '3',
+229 silly get     'x-timer': 'S1477942693.976487,VS0,VE0',
+229 silly get     vary: 'Accept-Encoding' } ]
+230 verbose get saving nan to /Users/lukaszamora/.npm/registry.npmjs.org/nan/.cache.json
+231 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+232 silly resolveWithNewModule nan@2.4.0 checking installable status
+233 silly cache add args [ 'nan@^2.3.0', null ]
+234 verbose cache add spec nan@^2.3.0
+235 silly cache add parsed spec Result {
+235 silly cache add   raw: 'nan@^2.3.0',
+235 silly cache add   scope: null,
+235 silly cache add   escapedName: 'nan',
+235 silly cache add   name: 'nan',
+235 silly cache add   rawSpec: '^2.3.0',
+235 silly cache add   spec: '>=2.3.0 <3.0.0',
+235 silly cache add   type: 'range' }
+236 silly addNamed nan@>=2.3.0 <3.0.0
+237 verbose addNamed ">=2.3.0 <3.0.0" is a valid semver range for nan
+238 silly addNameRange { name: 'nan', range: '>=2.3.0 <3.0.0', hasData: false }
+239 silly mapToRegistry name nan
+240 silly mapToRegistry using default registry
+241 silly mapToRegistry registry https://registry.npmjs.org/
+242 silly mapToRegistry data Result {
+242 silly mapToRegistry   raw: 'nan',
+242 silly mapToRegistry   scope: null,
+242 silly mapToRegistry   escapedName: 'nan',
+242 silly mapToRegistry   name: 'nan',
+242 silly mapToRegistry   rawSpec: '',
+242 silly mapToRegistry   spec: 'latest',
+242 silly mapToRegistry   type: 'tag' }
+243 silly mapToRegistry uri https://registry.npmjs.org/nan
+244 verbose addNameRange registry:https://registry.npmjs.org/nan not in flight; fetching
+245 verbose get https://registry.npmjs.org/nan not expired, no request
+246 silly addNameRange number 2 { name: 'nan', range: '>=2.3.0 <3.0.0', hasData: true }
+247 silly addNameRange versions [ 'nan',
+247 silly addNameRange   [ '0.3.0-wip',
+247 silly addNameRange     '0.3.0-wip2',
+247 silly addNameRange     '0.3.0',
+247 silly addNameRange     '0.3.1',
+247 silly addNameRange     '0.3.2',
+247 silly addNameRange     '0.4.0',
+247 silly addNameRange     '0.4.1',
+247 silly addNameRange     '0.4.2',
+247 silly addNameRange     '0.4.3',
+247 silly addNameRange     '0.4.4',
+247 silly addNameRange     '0.5.0',
+247 silly addNameRange     '0.5.1',
+247 silly addNameRange     '0.5.2',
+247 silly addNameRange     '0.6.0',
+247 silly addNameRange     '0.7.0',
+247 silly addNameRange     '0.7.1',
+247 silly addNameRange     '0.8.0',
+247 silly addNameRange     '1.0.0',
+247 silly addNameRange     '1.1.0',
+247 silly addNameRange     '1.1.1',
+247 silly addNameRange     '1.1.2',
+247 silly addNameRange     '1.2.0',
+247 silly addNameRange     '1.3.0',
+247 silly addNameRange     '1.4.0',
+247 silly addNameRange     '1.4.1',
+247 silly addNameRange     '1.5.0',
+247 silly addNameRange     '1.4.2',
+247 silly addNameRange     '1.4.3',
+247 silly addNameRange     '1.5.1',
+247 silly addNameRange     '1.5.2',
+247 silly addNameRange     '1.6.0',
+247 silly addNameRange     '1.5.3',
+247 silly addNameRange     '1.6.1',
+247 silly addNameRange     '1.6.2',
+247 silly addNameRange     '1.7.0',
+247 silly addNameRange     '1.8.0',
+247 silly addNameRange     '1.8.1',
+247 silly addNameRange     '1.8.2',
+247 silly addNameRange     '1.8.3',
+247 silly addNameRange     '1.8.4',
+247 silly addNameRange     '1.9.0',
+247 silly addNameRange     '2.0.0',
+247 silly addNameRange     '2.0.1',
+247 silly addNameRange     '2.0.2',
+247 silly addNameRange     '2.0.3',
+247 silly addNameRange     '2.0.4',
+247 silly addNameRange     '2.0.5',
+247 silly addNameRange     '2.0.6',
+247 silly addNameRange     '2.0.7',
+247 silly addNameRange     '2.0.8',
+247 silly addNameRange     '2.0.9',
+247 silly addNameRange     '2.1.0',
+247 silly addNameRange     '2.2.0',
+247 silly addNameRange     '2.2.1',
+247 silly addNameRange     '2.3.0',
+247 silly addNameRange     '2.3.1',
+247 silly addNameRange     '2.3.2',
+247 silly addNameRange     '2.3.3',
+247 silly addNameRange     '2.3.4',
+247 silly addNameRange     '2.3.5',
+247 silly addNameRange     '2.4.0' ] ]
+248 silly addNamed nan@2.4.0
+249 verbose addNamed "2.4.0" is a plain semver version for nan
+250 silly mapToRegistry name nan
+251 silly mapToRegistry using default registry
+252 silly mapToRegistry registry https://registry.npmjs.org/
+253 silly mapToRegistry data Result {
+253 silly mapToRegistry   raw: 'nan',
+253 silly mapToRegistry   scope: null,
+253 silly mapToRegistry   escapedName: 'nan',
+253 silly mapToRegistry   name: 'nan',
+253 silly mapToRegistry   rawSpec: '',
+253 silly mapToRegistry   spec: 'latest',
+253 silly mapToRegistry   type: 'tag' }
+254 silly mapToRegistry uri https://registry.npmjs.org/nan
+255 verbose addRemoteTarball https://registry.npmjs.org/nan/-/nan-2.4.0.tgz not in flight; adding
+256 verbose addRemoteTarball [ 'https://registry.npmjs.org/nan/-/nan-2.4.0.tgz',
+256 verbose addRemoteTarball   'fb3c59d45fe4effe215f0b890f8adf6eb32d2232' ]
+257 info retry fetch attempt 1 at 4:38:14 PM
+258 info attempt registry request try #1 at 4:38:14 PM
+259 http fetch GET https://registry.npmjs.org/nan/-/nan-2.4.0.tgz
+260 http 200 https://registry.npmjs.org/bindings
+261 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+261 verbose headers   etag: '"8QW29MHCPCE6VJCVI3QVXRJAQ"',
+261 verbose headers   'content-type': 'application/json',
+261 verbose headers   'content-encoding': 'gzip',
+261 verbose headers   'cache-control': 'max-age=300',
+261 verbose headers   'content-length': '3832',
+261 verbose headers   'accept-ranges': 'bytes',
+261 verbose headers   date: 'Mon, 31 Oct 2016 19:38:13 GMT',
+261 verbose headers   via: '1.1 varnish',
+261 verbose headers   age: '101',
+261 verbose headers   connection: 'keep-alive',
+261 verbose headers   'x-served-by': 'cache-gru7120-GRU',
+261 verbose headers   'x-cache': 'HIT',
+261 verbose headers   'x-cache-hits': '2',
+261 verbose headers   'x-timer': 'S1477942693.976526,VS0,VE0',
+261 verbose headers   vary: 'Accept-Encoding' }
+262 silly get cb [ 200,
+262 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+262 silly get     etag: '"8QW29MHCPCE6VJCVI3QVXRJAQ"',
+262 silly get     'content-type': 'application/json',
+262 silly get     'content-encoding': 'gzip',
+262 silly get     'cache-control': 'max-age=300',
+262 silly get     'content-length': '3832',
+262 silly get     'accept-ranges': 'bytes',
+262 silly get     date: 'Mon, 31 Oct 2016 19:38:13 GMT',
+262 silly get     via: '1.1 varnish',
+262 silly get     age: '101',
+262 silly get     connection: 'keep-alive',
+262 silly get     'x-served-by': 'cache-gru7120-GRU',
+262 silly get     'x-cache': 'HIT',
+262 silly get     'x-cache-hits': '2',
+262 silly get     'x-timer': 'S1477942693.976526,VS0,VE0',
+262 silly get     vary: 'Accept-Encoding' } ]
+263 verbose get saving bindings to /Users/lukaszamora/.npm/registry.npmjs.org/bindings/.cache.json
+264 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+265 silly resolveWithNewModule bindings@1.2.1 checking installable status
+266 silly cache add args [ 'bindings@1.2.1', null ]
+267 verbose cache add spec bindings@1.2.1
+268 silly cache add parsed spec Result {
+268 silly cache add   raw: 'bindings@1.2.1',
+268 silly cache add   scope: null,
+268 silly cache add   escapedName: 'bindings',
+268 silly cache add   name: 'bindings',
+268 silly cache add   rawSpec: '1.2.1',
+268 silly cache add   spec: '1.2.1',
+268 silly cache add   type: 'version' }
+269 silly addNamed bindings@1.2.1
+270 verbose addNamed "1.2.1" is a plain semver version for bindings
+271 silly mapToRegistry name bindings
+272 silly mapToRegistry using default registry
+273 silly mapToRegistry registry https://registry.npmjs.org/
+274 silly mapToRegistry data Result {
+274 silly mapToRegistry   raw: 'bindings',
+274 silly mapToRegistry   scope: null,
+274 silly mapToRegistry   escapedName: 'bindings',
+274 silly mapToRegistry   name: 'bindings',
+274 silly mapToRegistry   rawSpec: '',
+274 silly mapToRegistry   spec: 'latest',
+274 silly mapToRegistry   type: 'tag' }
+275 silly mapToRegistry uri https://registry.npmjs.org/bindings
+276 verbose addNameVersion registry:https://registry.npmjs.org/bindings not in flight; fetching
+277 verbose get https://registry.npmjs.org/bindings not expired, no request
+278 silly mapToRegistry name bindings
+279 silly mapToRegistry using default registry
+280 silly mapToRegistry registry https://registry.npmjs.org/
+281 silly mapToRegistry data Result {
+281 silly mapToRegistry   raw: 'bindings',
+281 silly mapToRegistry   scope: null,
+281 silly mapToRegistry   escapedName: 'bindings',
+281 silly mapToRegistry   name: 'bindings',
+281 silly mapToRegistry   rawSpec: '',
+281 silly mapToRegistry   spec: 'latest',
+281 silly mapToRegistry   type: 'tag' }
+282 silly mapToRegistry uri https://registry.npmjs.org/bindings
+283 verbose addRemoteTarball https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz not in flight; adding
+284 verbose addRemoteTarball [ 'https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz',
+284 verbose addRemoteTarball   '14ad6113812d2d37d72e67b4cacb4bb726505f11' ]
+285 info retry fetch attempt 1 at 4:38:14 PM
+286 info attempt registry request try #1 at 4:38:14 PM
+287 http fetch GET https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz
+288 http fetch 200 https://registry.npmjs.org/nan/-/nan-2.4.0.tgz
+289 http fetch 200 https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz
+290 silly fetchAndShaCheck shasum 14ad6113812d2d37d72e67b4cacb4bb726505f11
+291 verbose addTmpTarball /var/folders/t8/xzd1431j4b34nxdlg12m3jc40000gn/T/npm-12225-2e8b3931/registry.npmjs.org/bindings/-/bindings-1.2.1.tgz not in flight; adding
+292 verbose addTmpTarball already have metadata; skipping unpack for bindings@1.2.1
+293 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+294 silly cache afterAdd bindings@1.2.1
+295 verbose afterAdd /Users/lukaszamora/.npm/bindings/1.2.1/package/package.json not in flight; writing
+296 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+297 verbose afterAdd /Users/lukaszamora/.npm/bindings/1.2.1/package/package.json written
+298 silly fetchAndShaCheck shasum fb3c59d45fe4effe215f0b890f8adf6eb32d2232
+299 verbose addTmpTarball /var/folders/t8/xzd1431j4b34nxdlg12m3jc40000gn/T/npm-12225-2e8b3931/registry.npmjs.org/nan/-/nan-2.4.0.tgz not in flight; adding
+300 verbose addTmpTarball already have metadata; skipping unpack for nan@2.4.0
+301 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+302 silly cache afterAdd nan@2.4.0
+303 verbose afterAdd /Users/lukaszamora/.npm/nan/2.4.0/package/package.json not in flight; writing
+304 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+305 verbose afterAdd /Users/lukaszamora/.npm/nan/2.4.0/package/package.json written
+306 silly fetchNamedPackageData core-util-is
+307 silly mapToRegistry name core-util-is
+308 silly mapToRegistry using default registry
+309 silly mapToRegistry registry https://registry.npmjs.org/
+310 silly mapToRegistry data Result {
+310 silly mapToRegistry   raw: 'core-util-is',
+310 silly mapToRegistry   scope: null,
+310 silly mapToRegistry   escapedName: 'core-util-is',
+310 silly mapToRegistry   name: 'core-util-is',
+310 silly mapToRegistry   rawSpec: '',
+310 silly mapToRegistry   spec: 'latest',
+310 silly mapToRegistry   type: 'tag' }
+311 silly mapToRegistry uri https://registry.npmjs.org/core-util-is
+312 silly fetchNamedPackageData isarray
+313 silly mapToRegistry name isarray
+314 silly mapToRegistry using default registry
+315 silly mapToRegistry registry https://registry.npmjs.org/
+316 silly mapToRegistry data Result {
+316 silly mapToRegistry   raw: 'isarray',
+316 silly mapToRegistry   scope: null,
+316 silly mapToRegistry   escapedName: 'isarray',
+316 silly mapToRegistry   name: 'isarray',
+316 silly mapToRegistry   rawSpec: '',
+316 silly mapToRegistry   spec: 'latest',
+316 silly mapToRegistry   type: 'tag' }
+317 silly mapToRegistry uri https://registry.npmjs.org/isarray
+318 silly fetchNamedPackageData string_decoder
+319 silly mapToRegistry name string_decoder
+320 silly mapToRegistry using default registry
+321 silly mapToRegistry registry https://registry.npmjs.org/
+322 silly mapToRegistry data Result {
+322 silly mapToRegistry   raw: 'string_decoder',
+322 silly mapToRegistry   scope: null,
+322 silly mapToRegistry   escapedName: 'string_decoder',
+322 silly mapToRegistry   name: 'string_decoder',
+322 silly mapToRegistry   rawSpec: '',
+322 silly mapToRegistry   spec: 'latest',
+322 silly mapToRegistry   type: 'tag' }
+323 silly mapToRegistry uri https://registry.npmjs.org/string_decoder
+324 silly fetchNamedPackageData inherits
+325 silly mapToRegistry name inherits
+326 silly mapToRegistry using default registry
+327 silly mapToRegistry registry https://registry.npmjs.org/
+328 silly mapToRegistry data Result {
+328 silly mapToRegistry   raw: 'inherits',
+328 silly mapToRegistry   scope: null,
+328 silly mapToRegistry   escapedName: 'inherits',
+328 silly mapToRegistry   name: 'inherits',
+328 silly mapToRegistry   rawSpec: '',
+328 silly mapToRegistry   spec: 'latest',
+328 silly mapToRegistry   type: 'tag' }
+329 silly mapToRegistry uri https://registry.npmjs.org/inherits
+330 verbose request uri https://registry.npmjs.org/string_decoder
+331 verbose request no auth needed
+332 info attempt registry request try #1 at 4:38:14 PM
+333 verbose etag "3SLQP4XEWUIBONOV855WOPR0B"
+334 http request GET https://registry.npmjs.org/string_decoder
+335 verbose request uri https://registry.npmjs.org/inherits
+336 verbose request no auth needed
+337 info attempt registry request try #1 at 4:38:15 PM
+338 verbose etag "4D1KVDQ4GHML6TIB7FGIIWNZ5"
+339 http request GET https://registry.npmjs.org/inherits
+340 verbose request uri https://registry.npmjs.org/isarray
+341 verbose request no auth needed
+342 info attempt registry request try #1 at 4:38:15 PM
+343 verbose etag "BJKA0WUSK5IKFIR1C15Y2ZNCG"
+344 http request GET https://registry.npmjs.org/isarray
+345 verbose request uri https://registry.npmjs.org/core-util-is
+346 verbose request no auth needed
+347 info attempt registry request try #1 at 4:38:15 PM
+348 verbose etag "75RK9UUWAHLYO40UZKLLOJ8YF"
+349 http request GET https://registry.npmjs.org/core-util-is
+350 http 304 https://registry.npmjs.org/string_decoder
+351 verbose headers { date: 'Mon, 31 Oct 2016 19:38:15 GMT',
+351 verbose headers   via: '1.1 varnish',
+351 verbose headers   'cache-control': 'max-age=300',
+351 verbose headers   etag: '"3SLQP4XEWUIBONOV855WOPR0B"',
+351 verbose headers   age: '156',
+351 verbose headers   connection: 'keep-alive',
+351 verbose headers   'x-served-by': 'cache-gru7120-GRU',
+351 verbose headers   'x-cache': 'HIT',
+351 verbose headers   'x-cache-hits': '10',
+351 verbose headers   'x-timer': 'S1477942695.013331,VS0,VE0',
+351 verbose headers   vary: 'Accept-Encoding' }
+352 silly get cb [ 304,
+352 silly get   { date: 'Mon, 31 Oct 2016 19:38:15 GMT',
+352 silly get     via: '1.1 varnish',
+352 silly get     'cache-control': 'max-age=300',
+352 silly get     etag: '"3SLQP4XEWUIBONOV855WOPR0B"',
+352 silly get     age: '156',
+352 silly get     connection: 'keep-alive',
+352 silly get     'x-served-by': 'cache-gru7120-GRU',
+352 silly get     'x-cache': 'HIT',
+352 silly get     'x-cache-hits': '10',
+352 silly get     'x-timer': 'S1477942695.013331,VS0,VE0',
+352 silly get     vary: 'Accept-Encoding' } ]
+353 verbose etag https://registry.npmjs.org/string_decoder from cache
+354 verbose get saving string_decoder to /Users/lukaszamora/.npm/registry.npmjs.org/string_decoder/.cache.json
+355 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+356 silly resolveWithNewModule string_decoder@0.10.31 checking installable status
+357 silly cache add args [ 'string_decoder@~0.10.x', null ]
+358 verbose cache add spec string_decoder@~0.10.x
+359 silly cache add parsed spec Result {
+359 silly cache add   raw: 'string_decoder@~0.10.x',
+359 silly cache add   scope: null,
+359 silly cache add   escapedName: 'string_decoder',
+359 silly cache add   name: 'string_decoder',
+359 silly cache add   rawSpec: '~0.10.x',
+359 silly cache add   spec: '>=0.10.0 <0.11.0',
+359 silly cache add   type: 'range' }
+360 silly addNamed string_decoder@>=0.10.0 <0.11.0
+361 verbose addNamed ">=0.10.0 <0.11.0" is a valid semver range for string_decoder
+362 silly addNameRange { name: 'string_decoder',
+362 silly addNameRange   range: '>=0.10.0 <0.11.0',
+362 silly addNameRange   hasData: false }
+363 silly mapToRegistry name string_decoder
+364 silly mapToRegistry using default registry
+365 silly mapToRegistry registry https://registry.npmjs.org/
+366 silly mapToRegistry data Result {
+366 silly mapToRegistry   raw: 'string_decoder',
+366 silly mapToRegistry   scope: null,
+366 silly mapToRegistry   escapedName: 'string_decoder',
+366 silly mapToRegistry   name: 'string_decoder',
+366 silly mapToRegistry   rawSpec: '',
+366 silly mapToRegistry   spec: 'latest',
+366 silly mapToRegistry   type: 'tag' }
+367 silly mapToRegistry uri https://registry.npmjs.org/string_decoder
+368 verbose addNameRange registry:https://registry.npmjs.org/string_decoder not in flight; fetching
+369 http 304 https://registry.npmjs.org/inherits
+370 verbose headers { date: 'Mon, 31 Oct 2016 19:38:15 GMT',
+370 verbose headers   via: '1.1 varnish',
+370 verbose headers   'cache-control': 'max-age=300',
+370 verbose headers   etag: '"4D1KVDQ4GHML6TIB7FGIIWNZ5"',
+370 verbose headers   age: '0',
+370 verbose headers   connection: 'keep-alive',
+370 verbose headers   'x-served-by': 'cache-gru7126-GRU',
+370 verbose headers   'x-cache': 'HIT',
+370 verbose headers   'x-cache-hits': '2',
+370 verbose headers   'x-timer': 'S1477942695.019523,VS0,VE0',
+370 verbose headers   vary: 'Accept-Encoding' }
+371 silly get cb [ 304,
+371 silly get   { date: 'Mon, 31 Oct 2016 19:38:15 GMT',
+371 silly get     via: '1.1 varnish',
+371 silly get     'cache-control': 'max-age=300',
+371 silly get     etag: '"4D1KVDQ4GHML6TIB7FGIIWNZ5"',
+371 silly get     age: '0',
+371 silly get     connection: 'keep-alive',
+371 silly get     'x-served-by': 'cache-gru7126-GRU',
+371 silly get     'x-cache': 'HIT',
+371 silly get     'x-cache-hits': '2',
+371 silly get     'x-timer': 'S1477942695.019523,VS0,VE0',
+371 silly get     vary: 'Accept-Encoding' } ]
+372 verbose etag https://registry.npmjs.org/inherits from cache
+373 verbose get saving inherits to /Users/lukaszamora/.npm/registry.npmjs.org/inherits/.cache.json
+374 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+375 http 304 https://registry.npmjs.org/isarray
+376 verbose headers { date: 'Mon, 31 Oct 2016 19:38:15 GMT',
+376 verbose headers   via: '1.1 varnish',
+376 verbose headers   'cache-control': 'max-age=300',
+376 verbose headers   etag: '"BJKA0WUSK5IKFIR1C15Y2ZNCG"',
+376 verbose headers   age: '41',
+376 verbose headers   connection: 'keep-alive',
+376 verbose headers   'x-served-by': 'cache-gru7120-GRU',
+376 verbose headers   'x-cache': 'HIT',
+376 verbose headers   'x-cache-hits': '2',
+376 verbose headers   'x-timer': 'S1477942695.032779,VS0,VE0',
+376 verbose headers   vary: 'Accept-Encoding' }
+377 silly get cb [ 304,
+377 silly get   { date: 'Mon, 31 Oct 2016 19:38:15 GMT',
+377 silly get     via: '1.1 varnish',
+377 silly get     'cache-control': 'max-age=300',
+377 silly get     etag: '"BJKA0WUSK5IKFIR1C15Y2ZNCG"',
+377 silly get     age: '41',
+377 silly get     connection: 'keep-alive',
+377 silly get     'x-served-by': 'cache-gru7120-GRU',
+377 silly get     'x-cache': 'HIT',
+377 silly get     'x-cache-hits': '2',
+377 silly get     'x-timer': 'S1477942695.032779,VS0,VE0',
+377 silly get     vary: 'Accept-Encoding' } ]
+378 verbose etag https://registry.npmjs.org/isarray from cache
+379 verbose get saving isarray to /Users/lukaszamora/.npm/registry.npmjs.org/isarray/.cache.json
+380 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+381 verbose get https://registry.npmjs.org/string_decoder not expired, no request
+382 silly addNameRange number 2 { name: 'string_decoder',
+382 silly addNameRange   range: '>=0.10.0 <0.11.0',
+382 silly addNameRange   hasData: true }
+383 silly addNameRange versions [ 'string_decoder',
+383 silly addNameRange   [ '0.0.0',
+383 silly addNameRange     '0.0.1',
+383 silly addNameRange     '0.10.24',
+383 silly addNameRange     '0.11.10',
+383 silly addNameRange     '0.10.25',
+383 silly addNameRange     '0.11.10-1',
+383 silly addNameRange     '0.10.25-1',
+383 silly addNameRange     '0.10.31' ] ]
+384 silly addNamed string_decoder@0.10.31
+385 verbose addNamed "0.10.31" is a plain semver version for string_decoder
+386 silly resolveWithNewModule inherits@2.0.3 checking installable status
+387 silly cache add args [ 'inherits@~2.0.1', null ]
+388 verbose cache add spec inherits@~2.0.1
+389 silly cache add parsed spec Result {
+389 silly cache add   raw: 'inherits@~2.0.1',
+389 silly cache add   scope: null,
+389 silly cache add   escapedName: 'inherits',
+389 silly cache add   name: 'inherits',
+389 silly cache add   rawSpec: '~2.0.1',
+389 silly cache add   spec: '>=2.0.1 <2.1.0',
+389 silly cache add   type: 'range' }
+390 silly addNamed inherits@>=2.0.1 <2.1.0
+391 verbose addNamed ">=2.0.1 <2.1.0" is a valid semver range for inherits
+392 silly addNameRange { name: 'inherits', range: '>=2.0.1 <2.1.0', hasData: false }
+393 silly mapToRegistry name inherits
+394 silly mapToRegistry using default registry
+395 silly mapToRegistry registry https://registry.npmjs.org/
+396 silly mapToRegistry data Result {
+396 silly mapToRegistry   raw: 'inherits',
+396 silly mapToRegistry   scope: null,
+396 silly mapToRegistry   escapedName: 'inherits',
+396 silly mapToRegistry   name: 'inherits',
+396 silly mapToRegistry   rawSpec: '',
+396 silly mapToRegistry   spec: 'latest',
+396 silly mapToRegistry   type: 'tag' }
+397 silly mapToRegistry uri https://registry.npmjs.org/inherits
+398 verbose addNameRange registry:https://registry.npmjs.org/inherits not in flight; fetching
+399 silly resolveWithNewModule isarray@0.0.1 checking installable status
+400 silly cache add args [ 'isarray@0.0.1', null ]
+401 verbose cache add spec isarray@0.0.1
+402 silly cache add parsed spec Result {
+402 silly cache add   raw: 'isarray@0.0.1',
+402 silly cache add   scope: null,
+402 silly cache add   escapedName: 'isarray',
+402 silly cache add   name: 'isarray',
+402 silly cache add   rawSpec: '0.0.1',
+402 silly cache add   spec: '0.0.1',
+402 silly cache add   type: 'version' }
+403 silly addNamed isarray@0.0.1
+404 verbose addNamed "0.0.1" is a plain semver version for isarray
+405 silly mapToRegistry name isarray
+406 silly mapToRegistry using default registry
+407 silly mapToRegistry registry https://registry.npmjs.org/
+408 silly mapToRegistry data Result {
+408 silly mapToRegistry   raw: 'isarray',
+408 silly mapToRegistry   scope: null,
+408 silly mapToRegistry   escapedName: 'isarray',
+408 silly mapToRegistry   name: 'isarray',
+408 silly mapToRegistry   rawSpec: '',
+408 silly mapToRegistry   spec: 'latest',
+408 silly mapToRegistry   type: 'tag' }
+409 silly mapToRegistry uri https://registry.npmjs.org/isarray
+410 verbose addNameVersion registry:https://registry.npmjs.org/isarray not in flight; fetching
+411 verbose get https://registry.npmjs.org/inherits not expired, no request
+412 silly addNameRange number 2 { name: 'inherits', range: '>=2.0.1 <2.1.0', hasData: true }
+413 silly addNameRange versions [ 'inherits',
+413 silly addNameRange   [ '1.0.0', '2.0.0', '2.0.1', '1.0.1', '1.0.2', '2.0.3' ] ]
+414 silly addNamed inherits@2.0.3
+415 verbose addNamed "2.0.3" is a plain semver version for inherits
+416 silly cache afterAdd string_decoder@0.10.31
+417 verbose afterAdd /Users/lukaszamora/.npm/string_decoder/0.10.31/package/package.json not in flight; writing
+418 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+419 verbose get https://registry.npmjs.org/isarray not expired, no request
+420 silly cache afterAdd inherits@2.0.3
+421 verbose afterAdd /Users/lukaszamora/.npm/inherits/2.0.3/package/package.json not in flight; writing
+422 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+423 silly cache afterAdd isarray@0.0.1
+424 verbose afterAdd /Users/lukaszamora/.npm/isarray/0.0.1/package/package.json not in flight; writing
+425 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+426 verbose afterAdd /Users/lukaszamora/.npm/string_decoder/0.10.31/package/package.json written
+427 verbose afterAdd /Users/lukaszamora/.npm/inherits/2.0.3/package/package.json written
+428 verbose afterAdd /Users/lukaszamora/.npm/isarray/0.0.1/package/package.json written
+429 http 304 https://registry.npmjs.org/core-util-is
+430 verbose headers { date: 'Mon, 31 Oct 2016 19:38:15 GMT',
+430 verbose headers   via: '1.1 varnish',
+430 verbose headers   'cache-control': 'max-age=300',
+430 verbose headers   etag: '"75RK9UUWAHLYO40UZKLLOJ8YF"',
+430 verbose headers   age: '184',
+430 verbose headers   connection: 'keep-alive',
+430 verbose headers   'x-served-by': 'cache-gru7124-GRU',
+430 verbose headers   'x-cache': 'HIT',
+430 verbose headers   'x-cache-hits': '16',
+430 verbose headers   'x-timer': 'S1477942695.245025,VS0,VE0',
+430 verbose headers   vary: 'Accept-Encoding' }
+431 silly get cb [ 304,
+431 silly get   { date: 'Mon, 31 Oct 2016 19:38:15 GMT',
+431 silly get     via: '1.1 varnish',
+431 silly get     'cache-control': 'max-age=300',
+431 silly get     etag: '"75RK9UUWAHLYO40UZKLLOJ8YF"',
+431 silly get     age: '184',
+431 silly get     connection: 'keep-alive',
+431 silly get     'x-served-by': 'cache-gru7124-GRU',
+431 silly get     'x-cache': 'HIT',
+431 silly get     'x-cache-hits': '16',
+431 silly get     'x-timer': 'S1477942695.245025,VS0,VE0',
+431 silly get     vary: 'Accept-Encoding' } ]
+432 verbose etag https://registry.npmjs.org/core-util-is from cache
+433 verbose get saving core-util-is to /Users/lukaszamora/.npm/registry.npmjs.org/core-util-is/.cache.json
+434 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+435 silly resolveWithNewModule core-util-is@1.0.2 checking installable status
+436 silly cache add args [ 'core-util-is@~1.0.0', null ]
+437 verbose cache add spec core-util-is@~1.0.0
+438 silly cache add parsed spec Result {
+438 silly cache add   raw: 'core-util-is@~1.0.0',
+438 silly cache add   scope: null,
+438 silly cache add   escapedName: 'core-util-is',
+438 silly cache add   name: 'core-util-is',
+438 silly cache add   rawSpec: '~1.0.0',
+438 silly cache add   spec: '>=1.0.0 <1.1.0',
+438 silly cache add   type: 'range' }
+439 silly addNamed core-util-is@>=1.0.0 <1.1.0
+440 verbose addNamed ">=1.0.0 <1.1.0" is a valid semver range for core-util-is
+441 silly addNameRange { name: 'core-util-is', range: '>=1.0.0 <1.1.0', hasData: false }
+442 silly mapToRegistry name core-util-is
+443 silly mapToRegistry using default registry
+444 silly mapToRegistry registry https://registry.npmjs.org/
+445 silly mapToRegistry data Result {
+445 silly mapToRegistry   raw: 'core-util-is',
+445 silly mapToRegistry   scope: null,
+445 silly mapToRegistry   escapedName: 'core-util-is',
+445 silly mapToRegistry   name: 'core-util-is',
+445 silly mapToRegistry   rawSpec: '',
+445 silly mapToRegistry   spec: 'latest',
+445 silly mapToRegistry   type: 'tag' }
+446 silly mapToRegistry uri https://registry.npmjs.org/core-util-is
+447 verbose addNameRange registry:https://registry.npmjs.org/core-util-is not in flight; fetching
+448 verbose get https://registry.npmjs.org/core-util-is not expired, no request
+449 silly addNameRange number 2 { name: 'core-util-is', range: '>=1.0.0 <1.1.0', hasData: true }
+450 silly addNameRange versions [ 'core-util-is', [ '1.0.0', '1.0.1', '1.0.2' ] ]
+451 silly addNamed core-util-is@1.0.2
+452 verbose addNamed "1.0.2" is a plain semver version for core-util-is
+453 silly cache afterAdd core-util-is@1.0.2
+454 verbose afterAdd /Users/lukaszamora/.npm/core-util-is/1.0.2/package/package.json not in flight; writing
+455 verbose correctMkdir /Users/lukaszamora/.npm correctMkdir not in flight; initializing
+456 verbose afterAdd /Users/lukaszamora/.npm/core-util-is/1.0.2/package/package.json written
+457 silly loadAllDepsIntoIdealTree Finishing
+458 silly loadIdealTree Finishing
+459 silly currentTree lib
+460 silly idealTree lib
+460 silly idealTree └─┬ pg-native@1.10.0
+460 silly idealTree   ├── bindings@1.2.1
+460 silly idealTree   ├── core-util-is@1.0.2
+460 silly idealTree   ├── inherits@2.0.3
+460 silly idealTree   ├── isarray@0.0.1
+460 silly idealTree   ├── libpq@1.8.5
+460 silly idealTree   ├── nan@2.4.0
+460 silly idealTree   ├── pg-types@1.6.0
+460 silly idealTree   ├── readable-stream@1.0.31
+460 silly idealTree   └── string_decoder@0.10.31
+461 silly generateActionsToTake Starting
+462 silly install generateActionsToTake
+463 silly generateActionsToTake Finishing
+464 silly diffTrees action count 10
+465 silly diffTrees add bindings@1.2.1
+466 silly diffTrees add core-util-is@1.0.2
+467 silly diffTrees add inherits@2.0.3
+468 silly diffTrees add isarray@0.0.1
+469 silly diffTrees add nan@2.4.0
+470 silly diffTrees add string_decoder@0.10.31
+471 silly diffTrees add libpq@1.8.5
+472 silly diffTrees add pg-types@1.6.0
+473 silly diffTrees add readable-stream@1.0.31
+474 silly diffTrees add pg-native@1.10.0
+475 silly decomposeActions action count 80
+476 silly decomposeActions fetch bindings@1.2.1
+477 silly decomposeActions extract bindings@1.2.1
+478 silly decomposeActions test bindings@1.2.1
+479 silly decomposeActions preinstall bindings@1.2.1
+480 silly decomposeActions build bindings@1.2.1
+481 silly decomposeActions install bindings@1.2.1
+482 silly decomposeActions postinstall bindings@1.2.1
+483 silly decomposeActions finalize bindings@1.2.1
+484 silly decomposeActions fetch core-util-is@1.0.2
+485 silly decomposeActions extract core-util-is@1.0.2
+486 silly decomposeActions test core-util-is@1.0.2
+487 silly decomposeActions preinstall core-util-is@1.0.2
+488 silly decomposeActions build core-util-is@1.0.2
+489 silly decomposeActions install core-util-is@1.0.2
+490 silly decomposeActions postinstall core-util-is@1.0.2
+491 silly decomposeActions finalize core-util-is@1.0.2
+492 silly decomposeActions fetch inherits@2.0.3
+493 silly decomposeActions extract inherits@2.0.3
+494 silly decomposeActions test inherits@2.0.3
+495 silly decomposeActions preinstall inherits@2.0.3
+496 silly decomposeActions build inherits@2.0.3
+497 silly decomposeActions install inherits@2.0.3
+498 silly decomposeActions postinstall inherits@2.0.3
+499 silly decomposeActions finalize inherits@2.0.3
+500 silly decomposeActions fetch isarray@0.0.1
+501 silly decomposeActions extract isarray@0.0.1
+502 silly decomposeActions test isarray@0.0.1
+503 silly decomposeActions preinstall isarray@0.0.1
+504 silly decomposeActions build isarray@0.0.1
+505 silly decomposeActions install isarray@0.0.1
+506 silly decomposeActions postinstall isarray@0.0.1
+507 silly decomposeActions finalize isarray@0.0.1
+508 silly decomposeActions fetch nan@2.4.0
+509 silly decomposeActions extract nan@2.4.0
+510 silly decomposeActions test nan@2.4.0
+511 silly decomposeActions preinstall nan@2.4.0
+512 silly decomposeActions build nan@2.4.0
+513 silly decomposeActions install nan@2.4.0
+514 silly decomposeActions postinstall nan@2.4.0
+515 silly decomposeActions finalize nan@2.4.0
+516 silly decomposeActions fetch string_decoder@0.10.31
+517 silly decomposeActions extract string_decoder@0.10.31
+518 silly decomposeActions test string_decoder@0.10.31
+519 silly decomposeActions preinstall string_decoder@0.10.31
+520 silly decomposeActions build string_decoder@0.10.31
+521 silly decomposeActions install string_decoder@0.10.31
+522 silly decomposeActions postinstall string_decoder@0.10.31
+523 silly decomposeActions finalize string_decoder@0.10.31
+524 silly decomposeActions fetch libpq@1.8.5
+525 silly decomposeActions extract libpq@1.8.5
+526 silly decomposeActions test libpq@1.8.5
+527 silly decomposeActions preinstall libpq@1.8.5
+528 silly decomposeActions build libpq@1.8.5
+529 silly decomposeActions install libpq@1.8.5
+530 silly decomposeActions postinstall libpq@1.8.5
+531 silly decomposeActions finalize libpq@1.8.5
+532 silly decomposeActions fetch pg-types@1.6.0
+533 silly decomposeActions extract pg-types@1.6.0
+534 silly decomposeActions test pg-types@1.6.0
+535 silly decomposeActions preinstall pg-types@1.6.0
+536 silly decomposeActions build pg-types@1.6.0
+537 silly decomposeActions install pg-types@1.6.0
+538 silly decomposeActions postinstall pg-types@1.6.0
+539 silly decomposeActions finalize pg-types@1.6.0
+540 silly decomposeActions fetch readable-stream@1.0.31
+541 silly decomposeActions extract readable-stream@1.0.31
+542 silly decomposeActions test readable-stream@1.0.31
+543 silly decomposeActions preinstall readable-stream@1.0.31
+544 silly decomposeActions build readable-stream@1.0.31
+545 silly decomposeActions install readable-stream@1.0.31
+546 silly decomposeActions postinstall readable-stream@1.0.31
+547 silly decomposeActions finalize readable-stream@1.0.31
+548 silly decomposeActions fetch pg-native@1.10.0
+549 silly decomposeActions extract pg-native@1.10.0
+550 silly decomposeActions test pg-native@1.10.0
+551 silly decomposeActions preinstall pg-native@1.10.0
+552 silly decomposeActions build pg-native@1.10.0
+553 silly decomposeActions install pg-native@1.10.0
+554 silly decomposeActions postinstall pg-native@1.10.0
+555 silly decomposeActions finalize pg-native@1.10.0
+556 silly runTopLevelLifecycles Starting
+557 silly executeActions Starting
+558 silly install executeActions
+559 silly doSerial global-install 0
+560 silly doParallel fetch 10
+561 verbose correctMkdir /Users/lukaszamora/.npm/_locks correctMkdir not in flight; initializing
+562 verbose lock using /Users/lukaszamora/.npm/_locks/staging-3a08f0df5026584d.lock for /usr/local/lib/node_modules/.staging
+563 silly doParallel extract 10
+564 silly extract bindings@1.2.1
+565 silly extract core-util-is@1.0.2
+566 silly extract inherits@2.0.3
+567 silly extract isarray@0.0.1
+568 silly extract nan@2.4.0
+569 silly extract string_decoder@0.10.31
+570 silly extract libpq@1.8.5
+571 silly extract pg-types@1.6.0
+572 silly extract readable-stream@1.0.31
+573 silly extract pg-native@1.10.0
+574 verbose unbuild lib/node_modules/.staging/bindings-b2da8a9d
+575 verbose unbuild lib/node_modules/.staging/core-util-is-d619952e
+576 verbose unbuild lib/node_modules/.staging/inherits-999c9549
+577 verbose unbuild lib/node_modules/.staging/isarray-57dd22c8
+578 verbose unbuild lib/node_modules/.staging/nan-8ddfe519
+579 verbose unbuild lib/node_modules/.staging/string_decoder-a70f8bb4
+580 verbose unbuild lib/node_modules/.staging/libpq-20773a8f
+581 verbose unbuild lib/node_modules/.staging/pg-types-669465a4
+582 verbose unbuild lib/node_modules/.staging/readable-stream-3c0506db
+583 verbose unbuild lib/node_modules/.staging/pg-native-f9549067
+584 silly gentlyRm /usr/local/lib/node_modules/.staging/bindings-b2da8a9d is being purged from base /usr/local
+585 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/bindings-b2da8a9d
+586 silly gentlyRm /usr/local/lib/node_modules/.staging/core-util-is-d619952e is being purged from base /usr/local
+587 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/core-util-is-d619952e
+588 silly gentlyRm /usr/local/lib/node_modules/.staging/inherits-999c9549 is being purged from base /usr/local
+589 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/inherits-999c9549
+590 silly gentlyRm /usr/local/lib/node_modules/.staging/isarray-57dd22c8 is being purged from base /usr/local
+591 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/isarray-57dd22c8
+592 silly gentlyRm /usr/local/lib/node_modules/.staging/nan-8ddfe519 is being purged from base /usr/local
+593 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/nan-8ddfe519
+594 silly gentlyRm /usr/local/lib/node_modules/.staging/string_decoder-a70f8bb4 is being purged from base /usr/local
+595 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/string_decoder-a70f8bb4
+596 silly gentlyRm /usr/local/lib/node_modules/.staging/libpq-20773a8f is being purged from base /usr/local
+597 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/libpq-20773a8f
+598 silly gentlyRm /usr/local/lib/node_modules/.staging/pg-types-669465a4 is being purged from base /usr/local
+599 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/pg-types-669465a4
+600 silly gentlyRm /usr/local/lib/node_modules/.staging/readable-stream-3c0506db is being purged from base /usr/local
+601 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/readable-stream-3c0506db
+602 silly gentlyRm /usr/local/lib/node_modules/.staging/pg-native-f9549067 is being purged from base /usr/local
+603 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/pg-native-f9549067
+604 verbose tar unpack /Users/lukaszamora/.npm/bindings/1.2.1/package.tgz
+605 verbose tar unpacking to /usr/local/lib/node_modules/.staging/bindings-b2da8a9d
+606 silly gentlyRm /usr/local/lib/node_modules/.staging/bindings-b2da8a9d is being purged
+607 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/bindings-b2da8a9d
+608 verbose tar unpack /Users/lukaszamora/.npm/core-util-is/1.0.2/package.tgz
+609 verbose tar unpacking to /usr/local/lib/node_modules/.staging/core-util-is-d619952e
+610 silly gentlyRm /usr/local/lib/node_modules/.staging/core-util-is-d619952e is being purged
+611 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/core-util-is-d619952e
+612 verbose tar unpack /Users/lukaszamora/.npm/inherits/2.0.3/package.tgz
+613 verbose tar unpacking to /usr/local/lib/node_modules/.staging/inherits-999c9549
+614 silly gentlyRm /usr/local/lib/node_modules/.staging/inherits-999c9549 is being purged
+615 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/inherits-999c9549
+616 verbose tar unpack /Users/lukaszamora/.npm/isarray/0.0.1/package.tgz
+617 verbose tar unpacking to /usr/local/lib/node_modules/.staging/isarray-57dd22c8
+618 silly gentlyRm /usr/local/lib/node_modules/.staging/isarray-57dd22c8 is being purged
+619 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/isarray-57dd22c8
+620 verbose tar unpack /Users/lukaszamora/.npm/nan/2.4.0/package.tgz
+621 verbose tar unpacking to /usr/local/lib/node_modules/.staging/nan-8ddfe519
+622 silly gentlyRm /usr/local/lib/node_modules/.staging/nan-8ddfe519 is being purged
+623 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/nan-8ddfe519
+624 verbose tar unpack /Users/lukaszamora/.npm/string_decoder/0.10.31/package.tgz
+625 verbose tar unpacking to /usr/local/lib/node_modules/.staging/string_decoder-a70f8bb4
+626 silly gentlyRm /usr/local/lib/node_modules/.staging/string_decoder-a70f8bb4 is being purged
+627 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/string_decoder-a70f8bb4
+628 verbose tar unpack /Users/lukaszamora/.npm/libpq/1.8.5/package.tgz
+629 verbose tar unpacking to /usr/local/lib/node_modules/.staging/libpq-20773a8f
+630 silly gentlyRm /usr/local/lib/node_modules/.staging/libpq-20773a8f is being purged
+631 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/libpq-20773a8f
+632 verbose tar unpack /Users/lukaszamora/.npm/pg-types/1.6.0/package.tgz
+633 verbose tar unpacking to /usr/local/lib/node_modules/.staging/pg-types-669465a4
+634 silly gentlyRm /usr/local/lib/node_modules/.staging/pg-types-669465a4 is being purged
+635 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/pg-types-669465a4
+636 verbose tar unpack /Users/lukaszamora/.npm/readable-stream/1.0.31/package.tgz
+637 verbose tar unpacking to /usr/local/lib/node_modules/.staging/readable-stream-3c0506db
+638 silly gentlyRm /usr/local/lib/node_modules/.staging/readable-stream-3c0506db is being purged
+639 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/readable-stream-3c0506db
+640 verbose tar unpack /Users/lukaszamora/.npm/pg-native/1.10.0/package.tgz
+641 verbose tar unpacking to /usr/local/lib/node_modules/.staging/pg-native-f9549067
+642 silly gentlyRm /usr/local/lib/node_modules/.staging/pg-native-f9549067 is being purged
+643 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/pg-native-f9549067
+644 silly gunzTarPerm modes [ '755', '644' ]
+645 silly gunzTarPerm modes [ '755', '644' ]
+646 silly gunzTarPerm modes [ '755', '644' ]
+647 silly gunzTarPerm modes [ '755', '644' ]
+648 silly gunzTarPerm modes [ '755', '644' ]
+649 silly gunzTarPerm modes [ '755', '644' ]
+650 silly gunzTarPerm modes [ '755', '644' ]
+651 silly gunzTarPerm modes [ '755', '644' ]
+652 silly gunzTarPerm modes [ '755', '644' ]
+653 silly gunzTarPerm modes [ '755', '644' ]
+654 silly gunzTarPerm extractEntry package.json
+655 silly gunzTarPerm extractEntry package.json
+656 silly gunzTarPerm extractEntry package.json
+657 silly gunzTarPerm extractEntry package.json
+658 silly gunzTarPerm extractEntry package.json
+659 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+660 silly gunzTarPerm extractEntry package.json
+661 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+662 silly gunzTarPerm extractEntry package.json
+663 silly gunzTarPerm extractEntry package.json
+664 silly gunzTarPerm extractEntry package.json
+665 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+666 silly gunzTarPerm extractEntry package.json
+667 silly gunzTarPerm extractEntry README.md
+668 silly gunzTarPerm extractEntry bindings.js
+669 silly gunzTarPerm extractEntry README.md
+670 silly gunzTarPerm extractEntry LICENSE
+671 silly gunzTarPerm extractEntry README.md
+672 silly gunzTarPerm extractEntry LICENSE
+673 silly gunzTarPerm extractEntry README.md
+674 silly gunzTarPerm extractEntry index.js
+675 silly gunzTarPerm extractEntry .npmignore
+676 silly gunzTarPerm modified mode [ '.npmignore', 436, 420 ]
+677 silly gunzTarPerm extractEntry README.md
+678 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+679 silly gunzTarPerm extractEntry README.md
+680 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+681 silly gunzTarPerm extractEntry .npmignore
+682 silly gunzTarPerm extractEntry README.md
+683 silly gunzTarPerm extractEntry .npmignore
+684 silly gunzTarPerm extractEntry README.md
+685 silly gunzTarPerm extractEntry .npmignore
+686 silly gunzTarPerm extractEntry README.md
+687 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+688 silly gunzTarPerm extractEntry .npmignore
+689 silly gunzTarPerm extractEntry README.md
+690 silly gunzTarPerm extractEntry include_dirs.js
+691 silly gunzTarPerm modified mode [ 'include_dirs.js', 436, 420 ]
+692 silly gunzTarPerm extractEntry test.js
+693 silly gunzTarPerm extractEntry float.patch
+694 silly gunzTarPerm extractEntry inherits.js
+695 silly gunzTarPerm extractEntry inherits_browser.js
+696 silly gunzTarPerm extractEntry nan_callbacks_pre_12_inl.h
+697 silly gunzTarPerm modified mode [ 'nan_callbacks_pre_12_inl.h', 436, 420 ]
+698 silly gunzTarPerm extractEntry CHANGELOG.md
+699 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 436, 420 ]
+700 silly gunzTarPerm extractEntry LICENSE.md
+701 silly gunzTarPerm modified mode [ 'LICENSE.md', 436, 420 ]
+702 silly gunzTarPerm extractEntry build/build.js
+703 silly gunzTarPerm extractEntry component.json
+704 silly gunzTarPerm extractEntry LICENSE
+705 silly gunzTarPerm modified mode [ 'LICENSE', 436, 420 ]
+706 silly gunzTarPerm extractEntry index.js
+707 silly gunzTarPerm modified mode [ 'index.js', 436, 420 ]
+708 silly gunzTarPerm extractEntry index.js
+709 silly gunzTarPerm extractEntry index.js
+710 silly gunzTarPerm extractEntry .travis.yml
+711 silly gunzTarPerm extractEntry LICENSE
+712 silly gunzTarPerm modified mode [ 'LICENSE', 436, 420 ]
+713 silly gunzTarPerm extractEntry transform.js
+714 silly gunzTarPerm extractEntry index.js
+715 silly gunzTarPerm extractEntry bench/index.js
+716 silly gunzTarPerm extractEntry bench/leaks.js
+717 silly gunzTarPerm extractEntry .travis.yml
+718 silly gunzTarPerm extractEntry Makefile
+719 silly gunzTarPerm extractEntry lib/copy-stream.js
+720 silly gunzTarPerm extractEntry test/array-mode.js
+721 silly gunzTarPerm extractEntry test/custom-types.js
+722 silly gunzTarPerm extractEntry test/domains.js
+723 silly gunzTarPerm extractEntry test/huge-query.js
+724 silly gunzTarPerm extractEntry test/copy-to.js
+725 silly gunzTarPerm extractEntry test/async-workflow.js
+726 silly gunzTarPerm extractEntry test/many-connections.js
+727 silly gunzTarPerm extractEntry test/many-errors.js
+728 silly gunzTarPerm extractEntry test/query-sync.js
+729 silly gunzTarPerm extractEntry test/multiple-queries.js
+730 silly gunzTarPerm extractEntry test/copy-from.js
+731 silly gunzTarPerm extractEntry test/notify.js
+732 silly gunzTarPerm extractEntry test/connection.js
+733 silly gunzTarPerm extractEntry test/prepare.js
+734 silly gunzTarPerm extractEntry test/cancel.js
+735 silly gunzTarPerm extractEntry test/query-async.js
+736 silly gunzTarPerm extractEntry test/index.js
+737 silly gunzTarPerm extractEntry test/version.js
+738 silly gunzTarPerm extractEntry test/load.js
+739 silly gunzTarPerm extractEntry test/mocha.opts
+740 silly gunzTarPerm extractEntry doc/node_misc.md
+741 silly gunzTarPerm modified mode [ 'doc/node_misc.md', 436, 420 ]
+742 silly gunzTarPerm extractEntry lib/util.js
+743 silly gunzTarPerm extractEntry binding.gyp
+744 silly gunzTarPerm extractEntry .travis.yml
+745 silly gunzTarPerm extractEntry Makefile
+746 silly gunzTarPerm extractEntry Makefile
+747 silly gunzTarPerm extractEntry lib/arrayParser.js
+748 silly gunzTarPerm extractEntry duplex.js
+749 silly gunzTarPerm extractEntry readable.js
+750 silly gunzTarPerm modified mode [ 'readable.js', 436, 420 ]
+751 silly gunzTarPerm extractEntry src/addon.cc
+752 silly gunzTarPerm extractEntry doc/asyncworker.md
+753 silly gunzTarPerm modified mode [ 'doc/asyncworker.md', 436, 420 ]
+754 silly gunzTarPerm extractEntry doc/callback.md
+755 silly gunzTarPerm modified mode [ 'doc/callback.md', 436, 420 ]
+756 silly gunzTarPerm extractEntry passthrough.js
+757 silly gunzTarPerm extractEntry writable.js
+758 silly gunzTarPerm extractEntry lib/binaryParsers.js
+759 silly gunzTarPerm extractEntry lib/textParsers.js
+760 silly gunzTarPerm extractEntry test/array.js
+761 silly gunzTarPerm extractEntry test/assert.js
+762 silly gunzTarPerm extractEntry test/dates.js
+763 silly gunzTarPerm extractEntry test/index.js
+764 silly gunzTarPerm extractEntry src/addon.h
+765 silly gunzTarPerm extractEntry src/connect-async-worker.cc
+766 silly gunzTarPerm extractEntry doc/converters.md
+767 silly gunzTarPerm modified mode [ 'doc/converters.md', 436, 420 ]
+768 silly gunzTarPerm extractEntry doc/errors.md
+769 silly gunzTarPerm modified mode [ 'doc/errors.md', 436, 420 ]
+770 silly gunzTarPerm extractEntry lib/_stream_duplex.js
+771 silly gunzTarPerm modified mode [ 'lib/_stream_duplex.js', 436, 420 ]
+772 silly gunzTarPerm extractEntry lib/_stream_passthrough.js
+773 silly gunzTarPerm modified mode [ 'lib/_stream_passthrough.js', 436, 420 ]
+774 silly gunzTarPerm extractEntry src/connect-async-worker.h
+775 silly gunzTarPerm extractEntry src/connection.cc
+776 silly gunzTarPerm extractEntry doc/maybe_types.md
+777 silly gunzTarPerm modified mode [ 'doc/maybe_types.md', 436, 420 ]
+778 silly gunzTarPerm extractEntry doc/methods.md
+779 silly gunzTarPerm modified mode [ 'doc/methods.md', 436, 420 ]
+780 silly gentlyRm /usr/local/lib/node_modules/.staging/bindings-b2da8a9d/node_modules is being purged
+781 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/bindings-b2da8a9d/node_modules
+782 silly gunzTarPerm extractEntry lib/_stream_readable.js
+783 silly gunzTarPerm modified mode [ 'lib/_stream_readable.js', 436, 420 ]
+784 silly gunzTarPerm extractEntry src/connection.h
+785 silly gunzTarPerm extractEntry test/async-connection.js
+786 silly gunzTarPerm extractEntry doc/new.md
+787 silly gunzTarPerm modified mode [ 'doc/new.md', 436, 420 ]
+788 silly gunzTarPerm extractEntry doc/buffers.md
+789 silly gunzTarPerm modified mode [ 'doc/buffers.md', 436, 420 ]
+790 silly gunzTarPerm extractEntry lib/_stream_transform.js
+791 silly gunzTarPerm modified mode [ 'lib/_stream_transform.js', 436, 420 ]
+792 silly gunzTarPerm extractEntry lib/_stream_writable.js
+793 silly gunzTarPerm modified mode [ 'lib/_stream_writable.js', 436, 420 ]
+794 silly gunzTarPerm extractEntry test/escaping.js
+795 silly gunzTarPerm extractEntry test/helper.js
+796 silly gunzTarPerm extractEntry doc/object_wrappers.md
+797 silly gunzTarPerm modified mode [ 'doc/object_wrappers.md', 436, 420 ]
+798 silly gunzTarPerm extractEntry doc/persistent.md
+799 silly gunzTarPerm modified mode [ 'doc/persistent.md', 436, 420 ]
+800 silly gentlyRm /usr/local/lib/node_modules/.staging/string_decoder-a70f8bb4/node_modules is being purged
+801 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/string_decoder-a70f8bb4/node_modules
+802 silly gentlyRm /usr/local/lib/node_modules/.staging/inherits-999c9549/node_modules is being purged
+803 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/inherits-999c9549/node_modules
+804 silly gentlyRm /usr/local/lib/node_modules/.staging/isarray-57dd22c8/node_modules is being purged
+805 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/isarray-57dd22c8/node_modules
+806 silly gunzTarPerm extractEntry test/index.js
+807 silly gunzTarPerm extractEntry test/error-info.js
+808 silly gunzTarPerm extractEntry doc/scopes.md
+809 silly gunzTarPerm modified mode [ 'doc/scopes.md', 436, 420 ]
+810 silly gunzTarPerm extractEntry doc/script.md
+811 silly gunzTarPerm modified mode [ 'doc/script.md', 436, 420 ]
+812 silly gentlyRm /usr/local/lib/node_modules/.staging/core-util-is-d619952e/node_modules is being purged
+813 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/core-util-is-d619952e/node_modules
+814 silly gunzTarPerm extractEntry test/async-socket.js
+815 silly gunzTarPerm extractEntry test/sync-prepare.js
+816 silly gunzTarPerm extractEntry doc/string_bytes.md
+817 silly gunzTarPerm modified mode [ 'doc/string_bytes.md', 436, 420 ]
+818 silly gunzTarPerm extractEntry doc/v8_internals.md
+819 silly gunzTarPerm modified mode [ 'doc/v8_internals.md', 436, 420 ]
+820 silly gunzTarPerm extractEntry test/multiple-queries.js
+821 silly gunzTarPerm extractEntry test/non-blocking-controls.js
+822 silly gunzTarPerm extractEntry doc/v8_misc.md
+823 silly gunzTarPerm modified mode [ 'doc/v8_misc.md', 436, 420 ]
+824 silly gunzTarPerm extractEntry nan.h
+825 silly gunzTarPerm modified mode [ 'nan.h', 436, 420 ]
+826 silly gunzTarPerm extractEntry test/notification.js
+827 silly gunzTarPerm extractEntry test/error-conditions.js
+828 silly gunzTarPerm extractEntry nan_callbacks.h
+829 silly gunzTarPerm modified mode [ 'nan_callbacks.h', 436, 420 ]
+830 silly gunzTarPerm extractEntry nan_callbacks_12_inl.h
+831 silly gunzTarPerm modified mode [ 'nan_callbacks_12_inl.h', 436, 420 ]
+832 silly gunzTarPerm extractEntry test/result-accessors.js
+833 silly gunzTarPerm extractEntry test/copy-out.js
+834 silly gunzTarPerm extractEntry test/server-version.js
+835 silly gunzTarPerm extractEntry test/copy-in.js
+836 silly gunzTarPerm extractEntry nan_converters.h
+837 silly gunzTarPerm modified mode [ 'nan_converters.h', 436, 420 ]
+838 silly gunzTarPerm extractEntry nan_converters_43_inl.h
+839 silly gunzTarPerm modified mode [ 'nan_converters_43_inl.h', 436, 420 ]
+840 silly gunzTarPerm extractEntry nan_converters_pre_43_inl.h
+841 silly gunzTarPerm modified mode [ 'nan_converters_pre_43_inl.h', 436, 420 ]
+842 silly gunzTarPerm extractEntry nan_implementation_12_inl.h
+843 silly gunzTarPerm modified mode [ 'nan_implementation_12_inl.h', 436, 420 ]
+844 silly gunzTarPerm extractEntry test/socket.js
+845 silly gunzTarPerm extractEntry test/construction.js
+846 silly gunzTarPerm extractEntry nan_implementation_pre_12_inl.h
+847 silly gunzTarPerm modified mode [ 'nan_implementation_pre_12_inl.h', 436, 420 ]
+848 silly gunzTarPerm extractEntry nan_maybe_43_inl.h
+849 silly gunzTarPerm modified mode [ 'nan_maybe_43_inl.h', 436, 420 ]
+850 silly gunzTarPerm extractEntry nan_maybe_pre_43_inl.h
+851 silly gunzTarPerm modified mode [ 'nan_maybe_pre_43_inl.h', 436, 420 ]
+852 silly gunzTarPerm extractEntry nan_new.h
+853 silly gunzTarPerm modified mode [ 'nan_new.h', 436, 420 ]
+854 silly gunzTarPerm extractEntry test/sync-integration.js
+855 silly gunzTarPerm extractEntry test/cancel.js
+856 silly gunzTarPerm extractEntry nan_object_wrap.h
+857 silly gunzTarPerm modified mode [ 'nan_object_wrap.h', 436, 420 ]
+858 silly gunzTarPerm extractEntry nan_persistent_12_inl.h
+859 silly gunzTarPerm modified mode [ 'nan_persistent_12_inl.h', 436, 420 ]
+860 silly gunzTarPerm extractEntry test/sync-parameters.js
+861 silly gunzTarPerm extractEntry test/load.js
+862 silly gentlyRm /usr/local/lib/node_modules/.staging/pg-types-669465a4/node_modules is being purged
+863 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/pg-types-669465a4/node_modules
+864 silly gunzTarPerm extractEntry nan_persistent_pre_12_inl.h
+865 silly gunzTarPerm modified mode [ 'nan_persistent_pre_12_inl.h', 436, 420 ]
+866 silly gunzTarPerm extractEntry nan_string_bytes.h
+867 silly gunzTarPerm modified mode [ 'nan_string_bytes.h', 436, 420 ]
+868 silly gunzTarPerm extractEntry test/sync.js
+869 silly gunzTarPerm extractEntry test/many-connections.js
+870 silly gentlyRm /usr/local/lib/node_modules/.staging/readable-stream-3c0506db/node_modules is being purged
+871 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/readable-stream-3c0506db/node_modules
+872 silly gunzTarPerm extractEntry nan_typedarray_contents.h
+873 silly gunzTarPerm modified mode [ 'nan_typedarray_contents.h', 436, 420 ]
+874 silly gunzTarPerm extractEntry nan_weak.h
+875 silly gunzTarPerm modified mode [ 'nan_weak.h', 436, 420 ]
+876 silly gunzTarPerm extractEntry test/mocha.opts
+877 silly gunzTarPerm extractEntry tools/package.json
+878 silly gunzTarPerm modified mode [ 'tools/package.json', 436, 420 ]
+879 silly gunzTarPerm extractEntry tools/README.md
+880 silly gunzTarPerm modified mode [ 'tools/README.md', 436, 420 ]
+881 silly gunzTarPerm extractEntry tools/1to2.js
+882 silly gunzTarPerm modified mode [ 'tools/1to2.js', 509, 493 ]
+883 silly gentlyRm /usr/local/lib/node_modules/.staging/pg-native-f9549067/node_modules is being purged
+884 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/pg-native-f9549067/node_modules
+885 silly gentlyRm /usr/local/lib/node_modules/.staging/libpq-20773a8f/node_modules is being purged
+886 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/libpq-20773a8f/node_modules
+887 silly gentlyRm /usr/local/lib/node_modules/.staging/nan-8ddfe519/node_modules is being purged
+888 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/.staging/nan-8ddfe519/node_modules
+889 silly doParallel preinstall 10
+890 silly preinstall bindings@1.2.1 /usr/local/lib/node_modules/.staging/bindings-b2da8a9d
+891 info lifecycle bindings@1.2.1~preinstall: bindings@1.2.1
+892 silly preinstall core-util-is@1.0.2 /usr/local/lib/node_modules/.staging/core-util-is-d619952e
+893 info lifecycle core-util-is@1.0.2~preinstall: core-util-is@1.0.2
+894 silly preinstall inherits@2.0.3 /usr/local/lib/node_modules/.staging/inherits-999c9549
+895 info lifecycle inherits@2.0.3~preinstall: inherits@2.0.3
+896 silly preinstall isarray@0.0.1 /usr/local/lib/node_modules/.staging/isarray-57dd22c8
+897 info lifecycle isarray@0.0.1~preinstall: isarray@0.0.1
+898 silly preinstall nan@2.4.0 /usr/local/lib/node_modules/.staging/nan-8ddfe519
+899 info lifecycle nan@2.4.0~preinstall: nan@2.4.0
+900 silly preinstall string_decoder@0.10.31 /usr/local/lib/node_modules/.staging/string_decoder-a70f8bb4
+901 info lifecycle string_decoder@0.10.31~preinstall: string_decoder@0.10.31
+902 silly preinstall libpq@1.8.5 /usr/local/lib/node_modules/.staging/libpq-20773a8f
+903 info lifecycle libpq@1.8.5~preinstall: libpq@1.8.5
+904 silly preinstall pg-types@1.6.0 /usr/local/lib/node_modules/.staging/pg-types-669465a4
+905 info lifecycle pg-types@1.6.0~preinstall: pg-types@1.6.0
+906 silly preinstall readable-stream@1.0.31 /usr/local/lib/node_modules/.staging/readable-stream-3c0506db
+907 info lifecycle readable-stream@1.0.31~preinstall: readable-stream@1.0.31
+908 silly preinstall pg-native@1.10.0 /usr/local/lib/node_modules/.staging/pg-native-f9549067
+909 info lifecycle pg-native@1.10.0~preinstall: pg-native@1.10.0
+910 silly lifecycle bindings@1.2.1~preinstall: no script for preinstall, continuing
+911 silly lifecycle core-util-is@1.0.2~preinstall: no script for preinstall, continuing
+912 silly lifecycle inherits@2.0.3~preinstall: no script for preinstall, continuing
+913 silly lifecycle isarray@0.0.1~preinstall: no script for preinstall, continuing
+914 silly lifecycle nan@2.4.0~preinstall: no script for preinstall, continuing
+915 silly lifecycle string_decoder@0.10.31~preinstall: no script for preinstall, continuing
+916 silly lifecycle libpq@1.8.5~preinstall: no script for preinstall, continuing
+917 silly lifecycle pg-types@1.6.0~preinstall: no script for preinstall, continuing
+918 silly lifecycle readable-stream@1.0.31~preinstall: no script for preinstall, continuing
+919 silly lifecycle pg-native@1.10.0~preinstall: no script for preinstall, continuing
+920 silly doReverseSerial remove 0
+921 silly doSerial move 0
+922 silly doSerial finalize 10
+923 silly finalize /usr/local/lib/node_modules/pg-native/node_modules/bindings
+924 silly finalize /usr/local/lib/node_modules/pg-native/node_modules/core-util-is
+925 silly finalize /usr/local/lib/node_modules/pg-native/node_modules/inherits
+926 silly finalize /usr/local/lib/node_modules/pg-native/node_modules/isarray
+927 silly finalize /usr/local/lib/node_modules/pg-native/node_modules/nan
+928 silly finalize /usr/local/lib/node_modules/pg-native/node_modules/string_decoder
+929 silly finalize /usr/local/lib/node_modules/pg-native/node_modules/libpq
+930 silly finalize /usr/local/lib/node_modules/pg-native/node_modules/pg-types
+931 silly finalize /usr/local/lib/node_modules/pg-native/node_modules/readable-stream
+932 silly finalize /usr/local/lib/node_modules/pg-native
+933 silly doSerial build 10
+934 silly build bindings@1.2.1
+935 info linkStuff bindings@1.2.1
+936 silly linkStuff bindings@1.2.1 has /usr/local/lib/node_modules/pg-native/node_modules as its parent node_modules
+937 silly linkStuff bindings@1.2.1 is part of a global install
+938 silly linkStuff bindings@1.2.1 is installed into a global node_modules
+939 verbose linkBins bindings@1.2.1
+940 verbose linkMans bindings@1.2.1
+941 silly build core-util-is@1.0.2
+942 info linkStuff core-util-is@1.0.2
+943 silly linkStuff core-util-is@1.0.2 has /usr/local/lib/node_modules/pg-native/node_modules as its parent node_modules
+944 silly linkStuff core-util-is@1.0.2 is part of a global install
+945 silly linkStuff core-util-is@1.0.2 is installed into a global node_modules
+946 verbose linkBins core-util-is@1.0.2
+947 verbose linkMans core-util-is@1.0.2
+948 silly build inherits@2.0.3
+949 info linkStuff inherits@2.0.3
+950 silly linkStuff inherits@2.0.3 has /usr/local/lib/node_modules/pg-native/node_modules as its parent node_modules
+951 silly linkStuff inherits@2.0.3 is part of a global install
+952 silly linkStuff inherits@2.0.3 is installed into a global node_modules
+953 verbose linkBins inherits@2.0.3
+954 verbose linkMans inherits@2.0.3
+955 silly build isarray@0.0.1
+956 info linkStuff isarray@0.0.1
+957 silly linkStuff isarray@0.0.1 has /usr/local/lib/node_modules/pg-native/node_modules as its parent node_modules
+958 silly linkStuff isarray@0.0.1 is part of a global install
+959 silly linkStuff isarray@0.0.1 is installed into a global node_modules
+960 verbose linkBins isarray@0.0.1
+961 verbose linkMans isarray@0.0.1
+962 silly build nan@2.4.0
+963 info linkStuff nan@2.4.0
+964 silly linkStuff nan@2.4.0 has /usr/local/lib/node_modules/pg-native/node_modules as its parent node_modules
+965 silly linkStuff nan@2.4.0 is part of a global install
+966 silly linkStuff nan@2.4.0 is installed into a global node_modules
+967 verbose linkBins nan@2.4.0
+968 verbose linkMans nan@2.4.0
+969 silly build string_decoder@0.10.31
+970 info linkStuff string_decoder@0.10.31
+971 silly linkStuff string_decoder@0.10.31 has /usr/local/lib/node_modules/pg-native/node_modules as its parent node_modules
+972 silly linkStuff string_decoder@0.10.31 is part of a global install
+973 silly linkStuff string_decoder@0.10.31 is installed into a global node_modules
+974 verbose linkBins string_decoder@0.10.31
+975 verbose linkMans string_decoder@0.10.31
+976 silly build libpq@1.8.5
+977 info linkStuff libpq@1.8.5
+978 silly linkStuff libpq@1.8.5 has /usr/local/lib/node_modules/pg-native/node_modules as its parent node_modules
+979 silly linkStuff libpq@1.8.5 is part of a global install
+980 silly linkStuff libpq@1.8.5 is installed into a global node_modules
+981 verbose linkBins libpq@1.8.5
+982 verbose linkMans libpq@1.8.5
+983 silly build pg-types@1.6.0
+984 info linkStuff pg-types@1.6.0
+985 silly linkStuff pg-types@1.6.0 has /usr/local/lib/node_modules/pg-native/node_modules as its parent node_modules
+986 silly linkStuff pg-types@1.6.0 is part of a global install
+987 silly linkStuff pg-types@1.6.0 is installed into a global node_modules
+988 verbose linkBins pg-types@1.6.0
+989 verbose linkMans pg-types@1.6.0
+990 silly build readable-stream@1.0.31
+991 info linkStuff readable-stream@1.0.31
+992 silly linkStuff readable-stream@1.0.31 has /usr/local/lib/node_modules/pg-native/node_modules as its parent node_modules
+993 silly linkStuff readable-stream@1.0.31 is part of a global install
+994 silly linkStuff readable-stream@1.0.31 is installed into a global node_modules
+995 verbose linkBins readable-stream@1.0.31
+996 verbose linkMans readable-stream@1.0.31
+997 silly build pg-native@1.10.0
+998 info linkStuff pg-native@1.10.0
+999 silly linkStuff pg-native@1.10.0 has /usr/local/lib/node_modules as its parent node_modules
+1000 silly linkStuff pg-native@1.10.0 is part of a global install
+1001 silly linkStuff pg-native@1.10.0 is installed into a global node_modules
+1002 silly linkStuff pg-native@1.10.0 is installed into the top-level global node_modules
+1003 verbose linkBins pg-native@1.10.0
+1004 verbose linkMans pg-native@1.10.0
+1005 silly doSerial global-link 0
+1006 silly doParallel update-linked 0
+1007 silly doSerial install 10
+1008 silly install bindings@1.2.1 /usr/local/lib/node_modules/.staging/bindings-b2da8a9d
+1009 info lifecycle bindings@1.2.1~install: bindings@1.2.1
+1010 silly lifecycle bindings@1.2.1~install: no script for install, continuing
+1011 silly install core-util-is@1.0.2 /usr/local/lib/node_modules/.staging/core-util-is-d619952e
+1012 info lifecycle core-util-is@1.0.2~install: core-util-is@1.0.2
+1013 silly lifecycle core-util-is@1.0.2~install: no script for install, continuing
+1014 silly install inherits@2.0.3 /usr/local/lib/node_modules/.staging/inherits-999c9549
+1015 info lifecycle inherits@2.0.3~install: inherits@2.0.3
+1016 silly lifecycle inherits@2.0.3~install: no script for install, continuing
+1017 silly install isarray@0.0.1 /usr/local/lib/node_modules/.staging/isarray-57dd22c8
+1018 info lifecycle isarray@0.0.1~install: isarray@0.0.1
+1019 silly lifecycle isarray@0.0.1~install: no script for install, continuing
+1020 silly install nan@2.4.0 /usr/local/lib/node_modules/.staging/nan-8ddfe519
+1021 info lifecycle nan@2.4.0~install: nan@2.4.0
+1022 silly lifecycle nan@2.4.0~install: no script for install, continuing
+1023 silly install string_decoder@0.10.31 /usr/local/lib/node_modules/.staging/string_decoder-a70f8bb4
+1024 info lifecycle string_decoder@0.10.31~install: string_decoder@0.10.31
+1025 silly lifecycle string_decoder@0.10.31~install: no script for install, continuing
+1026 silly install libpq@1.8.5 /usr/local/lib/node_modules/.staging/libpq-20773a8f
+1027 info lifecycle libpq@1.8.5~install: libpq@1.8.5
+1028 verbose lifecycle libpq@1.8.5~install: unsafe-perm in lifecycle true
+1029 verbose lifecycle libpq@1.8.5~install: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/lib/node_modules/pg-native/node_modules/libpq/node_modules/.bin:/usr/local/lib/node_modules/pg-native/node_modules/.bin:/usr/local/lib/node_modules/.bin:/Users/lukaszamora/.rvm/gems/ruby-2.2.2/bin:/Users/lukaszamora/.rvm/gems/ruby-2.2.2@global/bin:/Users/lukaszamora/.rvm/rubies/ruby-2.2.2/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/lukaszamora/.rvm/bin
+1030 verbose lifecycle libpq@1.8.5~install: CWD: /usr/local/lib/node_modules/pg-native/node_modules/libpq
+1031 silly lifecycle libpq@1.8.5~install: Args: [ '-c', 'node-gyp rebuild' ]
+1032 silly lifecycle libpq@1.8.5~install: Returned: code: 1  signal: null
+1033 info lifecycle libpq@1.8.5~install: Failed to exec install script
+1034 verbose unlock done using /Users/lukaszamora/.npm/_locks/staging-3a08f0df5026584d.lock for /usr/local/lib/node_modules/.staging
+1035 silly rollbackFailedOptional Starting
+1036 silly rollbackFailedOptional Finishing
+1037 silly runTopLevelLifecycles Finishing
+1038 silly install printInstalled
+1039 verbose stack Error: libpq@1.8.5 install: `node-gyp rebuild`
+1039 verbose stack Exit status 1
+1039 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
+1039 verbose stack     at emitTwo (events.js:106:13)
+1039 verbose stack     at EventEmitter.emit (events.js:191:7)
+1039 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:40:14)
+1039 verbose stack     at emitTwo (events.js:106:13)
+1039 verbose stack     at ChildProcess.emit (events.js:191:7)
+1039 verbose stack     at maybeClose (internal/child_process.js:877:16)
+1039 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+1040 verbose pkgid libpq@1.8.5
+1041 verbose cwd /Users/lukaszamora/Desktop/CATI
+1042 error Darwin 16.0.0
+1043 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "pg-native" "-g"
+1044 error node v6.9.1
+1045 error npm  v3.10.8
+1046 error code ELIFECYCLE
+1047 error libpq@1.8.5 install: `node-gyp rebuild`
+1047 error Exit status 1
+1048 error Failed at the libpq@1.8.5 install script 'node-gyp rebuild'.
+1048 error Make sure you have the latest version of node.js and npm installed.
+1048 error If you do, this is most likely a problem with the libpq package,
+1048 error not with npm itself.
+1048 error Tell the author that this fails on your system:
+1048 error     node-gyp rebuild
+1048 error You can get information on how to open an issue for this project with:
+1048 error     npm bugs libpq
+1048 error Or if that isn't available, you can get their info via:
+1048 error     npm owner ls libpq
+1048 error There is likely additional logging output above.
+1049 verbose exit [ 1, true ]

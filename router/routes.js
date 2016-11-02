@@ -2,6 +2,7 @@ var express     = require('express');
 var app         = express();
 var passport    = require('../config/passport');
 var fileUpload  = require('express-fileupload');
+var querying = require('../controllers/querying');
 
 function isLogged(req, res, next) {
 
@@ -73,7 +74,9 @@ app.get('/logged', function(req, res){
     res.render('logged.html', {title: 'Logged'});
 });
 
-
+app.get('/llamar', isLogged, function(req, res){
+    res.render('Call.html');
+});
 
 app.get('/logout', function(req, res){
     console.log('logout');
@@ -81,5 +84,6 @@ app.get('/logout', function(req, res){
     res.redirect('/');
 });
 
+app.get('/getAllEncuestado', querying.getAllEncuestados);
 
 module.exports = app;

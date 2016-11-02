@@ -4,11 +4,14 @@
 (function () {
     var app = angular.module('call', []);
 
-    app.controller('CallController',function(){
-        this.contact = encuestado;
+    app.controller('CallController',function($scope, $http){
+        $http.get('/getAllEncuestado').success(function (datos) {
+            $scope.encuestados = datos;
+            if (datos == ""){
+                $scope.encuestados = [];
+            }
+        }).error(function (datos) {
+            console.log("No hay encuestados");
+        })
     });
-
-    var models = require('../models');
-    var encuestado = models.Encuestado.findAll();
-
 })();

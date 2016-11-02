@@ -36,6 +36,7 @@ app.use(multer({
 app.use(session({ secret: 'estaweaeselsecretoctm' }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(express.static(path.join(__dirname))); //REVISAR ESTA LÍNEA SI HAY PROBLEMAS!
 
 //Routes
 app.use('/api', require('./router/api'));

@@ -8,7 +8,8 @@ module.exports = function(sequelize, DataTypes) {
     var Encuestado = sequelize.define("Encuestado", {
         nombre: DataTypes.STRING,
         apellido: DataTypes.STRING,
-        numero: DataTypes.INTEGER
+        numero: DataTypes.INTEGER,
+        estado: { type: Sequelize.BOOLEAN, defaultValue: false}
     }, {
         classMethods: {
             associate: function(models) {

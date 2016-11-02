@@ -1,14 +1,78 @@
 <html ng-app="call">
 <head>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CATI</title>
+
+    <link rel="stylesheet" href="https://bootswatch.com/united/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script type="text/javascript" src="../controllers/call.js"></script>
 </head>
-<body ng-controller="CallController as encuestado" >
-<div ng-repeat = "numero in encuestado.contact">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <g:hangout render="createhangout"
-           invites="[{ id : '{{numero.encuestado}}', invite_type : 'PHONE' }]">
-    </g:hangout>
-</div>
+<body ng-controller="CallController as personas" >
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Home</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuarios <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/verUsuario">Ver Usuario</a></li>
+                        <li><a href="/verAdmin">Ver Admin</a></li>
+                        <li><a href="/crearUsuario">Crear Usuario</a></li>
+                        <li><a href="/logAdmin">Login Admin</a></li>
+                        <li><a href="/llamar">Llamar</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!--<li><a href="#">Link</a></li>-->
+                <li class="dropdown">
+                    <a href="/logout"><b>Logout</b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bienvenido Usuario! <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/subirDatos">Subir Datos</a></li>
+                        <li><a href="/crearAdmin">Crear Admin</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<table style="width:100%">
+    <tr>
+        <th>Nombre</th>
+        <th>Estado</th>
+        <th>Llamar</th>
+    </tr>
+    <tr ng-repeat = "encuestado in encuestados">
+        <td>{{encuestado.nombre + " " + encuestado.apellido}}</td>
+        <td>
+            <select>
+                <option value = "Disponible">Disponible</option>
+                <option value = "Ocupad">Ocupado</option>
+                <option value = "Llamado">Llamado</option>
+            </select>
+        </td>
+        <td style="width: 1%;white-space: nowrap;" ng-hide = "encuestado.estado">
+            <a href="callto://+{{encuestado.numero}}"><img src="https://secure.skypeassets.com/apollo/2.0.936/images/components/contactme-button/callbutton_32px.png"></a>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
