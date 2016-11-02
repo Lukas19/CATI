@@ -49,9 +49,10 @@ router.use( function( req, res, next ) {
 
 //GET usuarios
 router.get('/usuarios', function(req, res, next) {
+	var User = req.user;
 	try {
 		models.Usuario.findAll().then(function (user) {
-			res.render('VerUsuario.html', {title: 'Listar Usuarios', resultado: user});
+			res.render('VerUsuario.html', {title: 'Listar Usuarios', resultado: user, user: User});
 		});
 	} catch (ex) {
 		console.error("Internal error:" + ex);
@@ -61,9 +62,10 @@ router.get('/usuarios', function(req, res, next) {
 
 //GET proyectos
 router.get('/proyectos', function(req, res, next) {
-	try {
+	var User = req.user;
+    try {
 		models.Proyecto.findAll().then(function (user) {
-			res.render('RDProyecto.html', {title: 'Listar Proyectos', resultado: user});
+			res.render('RDProyecto.html', {title: 'Listar Proyectos', resultado: user, user: User});
 		});
 	} catch (ex) {
 		console.error("Internal error:" + ex);
@@ -73,9 +75,10 @@ router.get('/proyectos', function(req, res, next) {
 
 //GET admins
 router.get('/admins', function(req, res, next) {
+    var User = req.user;
     try {
         models.Admin.findAll().then(function (user) {
-            res.render('VerUsuario.html', {title: 'Listar Admins', resultado: user, target: 'admins'});
+            res.render('VerUsuario.html', {title: 'Listar Admins', resultado: user, target: 'admins', user: User});
         });
     } catch (ex) {
         console.error("Internal error:" + ex);
