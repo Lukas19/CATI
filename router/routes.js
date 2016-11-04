@@ -97,8 +97,8 @@ app.get('/actualizarProyecto', isLoggedAdmin, function(req,res){
     res.render('ActualizarProyecto.html', {title: 'Actualizar Proyectos', id: id.toString(), user: user});
 });
 
-app.get('/llamar', isLogged, function(req, res){
-    var user = req.user;
+app.get('/llamar', function(req, res){
+    //var user = req.user;
     res.render('Call.html');
 });
 

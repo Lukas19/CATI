@@ -46,6 +46,21 @@ router.use( function( req, res, next ) {
 	next();
 });
 
+//SET Encuestado
+router.get('/encuestados/:id/:idd', function(req, res, next){
+    try {
+        models.Encuestado.findOne({where: {id: req.params.id}}).then(function (user) {
+            user.updateAttributes({
+                estado: req.params.idd
+            })
+            res.redirect('/llamar');
+        });
+    }catch(ex){
+        console.error("Internal error:"+ex);
+        return next(ex);
+    }
+});
+
 
 //GET usuarios
 router.get('/usuarios', function(req, res, next) {

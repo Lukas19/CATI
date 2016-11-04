@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
         nombre: DataTypes.STRING,
         apellido: DataTypes.STRING,
         numero: DataTypes.INTEGER,
-        estado: { type: Sequelize.BOOLEAN, defaultValue: false}
+        estado: { type: DataTypes.INTEGER, defaultValue: 1 }
     }, {
         classMethods: {
             associate: function(models) {

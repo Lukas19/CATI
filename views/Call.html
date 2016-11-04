@@ -57,19 +57,21 @@
 <table style="width:100%">
     <tr>
         <th>Nombre</th>
-        <th>Estado</th>
+        <th>Estado Actual</th>
+        <th>Cambiar Estado</th>
         <th>Llamar</th>
     </tr>
     <tr ng-repeat = "encuestado in encuestados">
         <td>{{encuestado.nombre + " " + encuestado.apellido}}</td>
+        <td>{{encuestado.estado}}</td>
         <td>
-            <select>
-                <option value = "Disponible">Disponible</option>
-                <option value = "Ocupad">Ocupado</option>
-                <option value = "Llamado">Llamado</option>
-            </select>
+            <ol>
+                <li><a href="/api/encuestados/{{encuestado.id}}/1">No llamado</a></li>
+                <li><a href="/api/encuestados/{{encuestado.id}}/2">No contesta</a></li>
+                <li><a href="/api/encuestados/{{encuestado.id}}/3">Llamado</a></li>
+            </ol>
         </td>
-        <td style="width: 1%;white-space: nowrap;" ng-hide = "encuestado.estado">
+        <td style="width: 1%;white-space: nowrap;" ng-hide = "encuestado.estado==3">
             <a href="callto://+{{encuestado.numero}}"><img src="https://secure.skypeassets.com/apollo/2.0.936/images/components/contactme-button/callbutton_32px.png"></a>
         </td>
     </tr>
