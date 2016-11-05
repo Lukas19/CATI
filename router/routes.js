@@ -97,7 +97,7 @@ app.get('/actualizarProyecto', isLoggedAdmin, function(req,res){
     res.render('ActualizarProyecto.html', {title: 'Actualizar Proyectos', id: id.toString(), user: user});
 });
 
-app.get('/llamar', function(req, res){
+app.get('/llamar', isLogged, function(req, res){
     //var user = req.user;
     res.render('Call.html');
 });
@@ -121,6 +121,6 @@ app.get('/logout', function(req, res){
     res.redirect('/');
 });
 
-app.get('/getAllEncuestado', querying.getAllEncuestados);
+app.get('/getAllEncuestado', isLogged, querying.getAllEncuestados);
 
 module.exports = app;
