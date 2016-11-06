@@ -11,6 +11,7 @@ module.exports = function(sequelize, DataTypes) {
         numero: DataTypes.INTEGER,
         estado: { type: DataTypes.INTEGER, defaultValue: 1 }
     }, {
+        timestamps: false,
         classMethods: {
             associate: function(models) {
                 Encuestado.hasMany(models.Llamada);

@@ -30,9 +30,11 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true }));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
+
 app.use(multer({
-	dest: "./public/uploads/"
+	dest: "./public/uploads/",
 }).single('sampleFile'));
+
 app.use(session({ secret: 'estaweaeselsecretoctm' }));
 app.use(passport.initialize());
 app.use(passport.session());

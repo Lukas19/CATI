@@ -1,3 +1,13 @@
+//DataBase
+var mysql      = require('mysql');
+var connection = mysql.createConnection({
+    host     : 'localhost',
+    user     : 'root',
+    password : 'fchacon',
+    database : 'adsw'
+});
+
+
 //Dependecies
 var express  = require('express');
 var router	 = express.Router();
@@ -6,25 +16,37 @@ var passport = require('passport');
 var util 	 = require('util');
 var fs		 = require('fs');
 
+
 //Return router
 module.exports = router;
 
-router.post("/upload", function(req, res, next){
-	if (req.files) {
-		console.log(util.inspect(req.files));
-		if (req.files.myFile.size === 0) {
-			return next(new Error("Hey, first would you select a file?"));
-		}
-		fs.exists(req.files.myFile.path, function(exists) {
-			if(exists) {
-				res.end("Got your file!");
-			} else {
-				res.end("Well, there is no magic for those who don’t believe in it!");
-			}
-		});
-	}
-	res.redirect('/');
+router.post("/upload", function(req, res, next) {
+    if (!req.file) {
+        res.send('No files were uploaded.');
+        return;
+    }
+
+    var name = req.file.filename;
+    var ruta = "/home/fchacon/git/CATI/" + req.file.path;
+
+    connection.connect();
+    connection.query("LOAD DATA LOCAL INFILE '" + ruta + "' INTO TABLE " +
+        "Encuestado FIELDS TERMINATED BY ',' " +
+        "LINES TERMINATED BY '\n' " +
+        "IGNORE 1 ROWS (@col1,@col2,@col3,@col4) " +
+        "SET estado = 1 , nombre = @col1, apellido = @col2, numero = @col3", function(err) {
+        if (!err) {
+            console.log('All good.');
+        }
+        else{
+            console.log('Error while performing Query.');
+            console.log(err);
+        }
+    });
+    res.redirect('/llamar');
+
 });
+
 
 //Change method
 router.use( function( req, res, next ) {

@@ -74,7 +74,7 @@ app.get('/crearProyecto', isLoggedAdmin, function(req, res){
     res.render('CrearProyecto.html', {title: 'Crear Proyecto', user: user});
 });
 
-app.get('/subirDatos', isLogged, function (req, res) {
+app.get('/subirDatos', isLoggedAdmin, function (req, res) {
     var user = req.user;
     res.render('SubirDatos.html',{user: user});
 });
