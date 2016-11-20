@@ -33,27 +33,41 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuarios <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="/verUsuario">Ver Usuario</a></li>
-                        <li><a href="/verAdmin">Ver Admin</a></li>
                         <li><a href="/crearUsuario">Crear Usuario</a></li>
-                        <li><a href="/logAdmin">Login Admin</a></li>
-                        <li><a href="/llamar">Llamar</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admins <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/verAdmin">Ver Admin</a></li>
+                        <li><a href="/crearAdmin">Crear Admin</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Proyectos <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/crearProyecto">Crear Proyecto</a></li>
+                        <li><a href="/verProyecto">Ver Proyecto</a></li>
                     </ul>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <!--<li><a href="#">Link</a></li>-->
+                <li><a href="/logAdmin">Login Admin</a></li>
+                <li><a href="/">Login Usuario</a></li>
                 <li class="dropdown">
                     <a href="/logout"><b>Logout</b></a>
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bienvenido Usuario! <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/subirDatos">Subir Datos</a></li>
-                        <li><a href="/crearAdmin">Crear Admin</a></li>
-                    </ul>
+                    <a>Bienvenido <%=user.username%></a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
+
 <table style="width:100%">
     <tr>
         <th>Nombre</th>
@@ -61,7 +75,8 @@
         <th>Cambiar Estado</th>
         <th>Llamar</th>
     </tr>
-    <tr ng-repeat = "encuestado in encuestados">
+    <tr ng-repeat = "encuestado in encuestados | filter: {ProyectoId: <%=id%>}:true">
+
         <td>{{encuestado.nombre + " " + encuestado.apellido}}</td>
         <td>{{encuestado.estado}}</td>
         <td>
@@ -74,6 +89,7 @@
         <td style="width: 1%;white-space: nowrap;" ng-hide = "encuestado.estado==3">
             <a href="callto://+{{encuestado.numero}}"><img src="https://secure.skypeassets.com/apollo/2.0.936/images/components/contactme-button/callbutton_32px.png"></a>
         </td>
+
     </tr>
 </table>
 </body>

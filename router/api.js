@@ -20,12 +20,13 @@ var fs		 = require('fs');
 //Return router
 module.exports = router;
 
-router.post("/upload", function(req, res, next) {
+router.post("/upload/:id", function(req, res, next) {
     if (!req.file) {
         res.send('No files were uploaded.');
         return;
     }
 
+    var idProyecto = req.params.id;
     var name = req.file.filename;
     var ruta = "/home/fchacon/git/CATI/" + req.file.path;
 
@@ -34,7 +35,7 @@ router.post("/upload", function(req, res, next) {
         "Encuestado FIELDS TERMINATED BY ',' " +
         "LINES TERMINATED BY '\n' " +
         "IGNORE 1 ROWS (@col1,@col2,@col3,@col4) " +
-        "SET estado = 1 , nombre = @col1, apellido = @col2, numero = @col3", function(err) {
+        "SET ProyectoId = " + idProyecto + ", estado = 1 , nombre = @col1, apellido = @col2, numero = @col3", function(err) {
         if (!err) {
             console.log('All good.');
         }
@@ -43,7 +44,7 @@ router.post("/upload", function(req, res, next) {
             console.log(err);
         }
     });
-    res.redirect('/llamar');
+    res.redirect('/llamar/?_' + idProyecto);
 
 });
 
