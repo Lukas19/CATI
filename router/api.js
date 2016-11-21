@@ -44,7 +44,7 @@ router.post("/upload/:id", function(req, res, next) {
             console.log(err);
         }
     });
-    res.redirect('/llamar/?_' + idProyecto);
+    res.redirect('/llamar/?_id=' + idProyecto);
 
 });
 
@@ -99,12 +99,16 @@ router.get('/usuarios', function(req, res, next) {
 });
 
 //GET proyectos
-router.get('/proyectos', function(req, res, next) {
+router.get('/proyectos/:isAdmin', function(req, res, next) {
 	var User = req.user;
+    var isAdmin = req.params.isAdmin;
     try {
 		models.Proyecto.findAll().then(function (user) {
-			res.render('RDProyecto.html', {title: 'Listar Proyectos', resultado: user, user: User});
-		});
+		    if (isAdmin != 'false') {
+                res.render('RDProyecto.html', {title: 'Listar Proyectos', resultado: user, user: User});
+            }else{
+                res.render('RDProyectoU.html', {title: 'Listar Proyectos', resultado: user, user: User});
+		}});
 	} catch (ex) {
 		console.error("Internal error:" + ex);
 		return next(ex);
