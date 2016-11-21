@@ -102,6 +102,11 @@ app.get('/llamar', isLogged, function(req, res){
     res.render('Call.html');
 });
 
+app.get('/encuesta', isLogged, function(req, res){
+    //var user = req.user;
+    res.render('Survey.html');
+});
+
 app.get('/logged', function(req, res){
     var user = req.user;
     isAdmin = false;
@@ -122,5 +127,8 @@ app.get('/logout', function(req, res){
 });
 
 app.get('/getAllEncuestado', isLogged, querying.getAllEncuestados);
+
+app.get('/getEncuesta', isLogged, querying.getEncuesta);
+
 
 module.exports = app;
