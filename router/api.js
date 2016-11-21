@@ -3,7 +3,7 @@ var mysql      = require('mysql');
 var connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : 'fchacon',
+    password : 'Zamora159',
     database : 'adsw'
 });
 
@@ -28,7 +28,7 @@ router.post("/upload/:id", function(req, res, next) {
 
     var idProyecto = req.params.id;
     var name = req.file.filename;
-    var ruta = "/home/fchacon/git/CATI/" + req.file.path;
+    var ruta = "/Users/lukaszamora/Desktop/CATI/" + req.file.path;
 
     connection.connect();
     connection.query("LOAD DATA LOCAL INFILE '" + ruta + "' INTO TABLE " +
@@ -185,6 +185,7 @@ router.post('/:id/proyectos/create', function(req,res,next){
     try{
         models.Proyecto.create({
             nombre: req.body.nombre,
+            enlace: req.body.enlace,
             AdminId: req.params.id
         }).then(function (result) {
             res.redirect("/");
@@ -332,4 +333,5 @@ router.post('/loginAdmin', passport.authenticate('admin', {
 	successRedirect : '/loggedAdmin',
 	failureRedirect : '/logAdmin'
 }));
+
 

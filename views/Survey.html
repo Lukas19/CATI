@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app = "survey">
+<head >
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+    <script type="text/javascript" src="../controllers/survey.js"></script>
+</head>
+<body ng-controller="SurveyController as surveys">
+<div ng-repeat = "survey in surveys">
+    <p>{{survey.enlace}}</p>
+</div>
+</body>
+</html>
