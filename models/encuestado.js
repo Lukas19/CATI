@@ -15,6 +15,7 @@ module.exports = function(sequelize, DataTypes) {
         classMethods: {
             associate: function(models) {
                 Encuestado.hasMany(models.Llamada);
+                Encuestado.belongsTo(models.Proyecto);
             }
         }
     });

@@ -22,26 +22,22 @@ function isLoggedAdmin(req, res, next) {
     res.redirect('/');
 }
 
-/*app.use(function (req,res,next) {
-    console.log("estoy en app.use");
-    if (req.path == '/upload'){
-        app.use(fileUpload());
-        console.log("activado upload");
-    }
-    if (req.query._id != null) {
-        console.log("no nulo: " + req.query._id);
-    }
-    next();
-});*/
-
-
-
 app.get('/', function(req, res){
-    res.render('index.html', {title: 'Inicio de sesión Usuario'});
+    var user = req.user;
+    if (user == null)
+        user = "";
+    else
+        user = user.username;
+    res.render('index.html', {title: 'Inicio de sesión Usuario', user: user});
 });
 
 app.get('/logAdmin', function(req, res){
-    res.render('LoginAdmin.html', {title: 'Inicio de sesión Admin'});
+    var user = req.user;
+    if (user == null)
+        user = "";
+    else
+        user = user.username;
+    res.render('LoginAdmin.html', {title: 'Inicio de sesión Admin', user: user});
 });
 
 app.get('/verUsuario', isLoggedAdmin, function(req, res){
@@ -54,7 +50,7 @@ app.get('/verAdmin', isLoggedAdmin,  function(req, res){
     res.redirect('/api/admins');
 });
 
-app.get('/verProyecto', isLoggedAdmin,  function(req, res){
+app.get('/verProyecto', isLogged,  function(req, res){
     var user = req.user;
     res.redirect('/api/proyectos');
 });
@@ -76,7 +72,8 @@ app.get('/crearProyecto', isLoggedAdmin, function(req, res){
 
 app.get('/subirDatos', isLoggedAdmin, function (req, res) {
     var user = req.user;
-    res.render('SubirDatos.html',{user: user});
+    var id = req.query._id;
+    res.render('SubirDatos.html',{user: user, id: id.toString()});
 });
 
 app.get('/actualizarUsuario', isLoggedAdmin, function(req,res){
@@ -98,8 +95,9 @@ app.get('/actualizarProyecto', isLoggedAdmin, function(req,res){
 });
 
 app.get('/llamar', isLogged, function(req, res){
-    //var user = req.user;
-    res.render('Call.html');
+    var user = req.user;
+    var id = req.query._id;
+    res.render('Call.html',{id: id.toString(), user: user});
 });
 
 app.get('/encuesta', isLogged, function(req, res){
