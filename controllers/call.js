@@ -11,7 +11,7 @@
                 $scope.encuestados = [];
             }
         }).error(function (datos) {
-            console.log("No hay encuestados");
+            alert("No hay encuestados");
         })
     });
 })();
