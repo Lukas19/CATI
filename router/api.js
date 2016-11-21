@@ -3,7 +3,7 @@ var mysql      = require('mysql');
 var connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : 'Zamora159',
+    password : 'fchacon',
     database : 'adsw'
 });
 
@@ -28,7 +28,7 @@ router.post("/upload/:id", function(req, res, next) {
 
     var idProyecto = req.params.id;
     var name = req.file.filename;
-    var ruta = "/Users/lukaszamora/Desktop/CATI/" + req.file.path;
+    var ruta = "/home/fchacon/git/CATI/" + req.file.path;
 
     connection.connect();
     connection.query("LOAD DATA LOCAL INFILE '" + ruta + "' INTO TABLE " +
@@ -70,13 +70,14 @@ router.use( function( req, res, next ) {
 });
 
 //SET Encuestado
-router.get('/encuestados/:id/:idd', function(req, res, next){
+router.get('/encuestados/:id/:idd/:idP', function(req, res, next){
+    var idProyecto = req.params.idP;
     try {
         models.Encuestado.findOne({where: {id: req.params.id}}).then(function (user) {
             user.updateAttributes({
                 estado: req.params.idd
             })
-            res.redirect('/llamar');
+            res.redirect('/llamar?_id=' + idProyecto);
         });
     }catch(ex){
         console.error("Internal error:"+ex);

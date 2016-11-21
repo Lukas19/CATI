@@ -81,9 +81,9 @@
         <td>{{encuestado.estado}}</td>
         <td>
             <ol>
-                <li><a href="/api/encuestados/{{encuestado.id}}/1">No llamado</a></li>
-                <li><a href="/api/encuestados/{{encuestado.id}}/2">No contesta</a></li>
-                <li><a href="/api/encuestados/{{encuestado.id}}/3">Llamado</a></li>
+                <li><a href="/api/encuestados/{{encuestado.id}}/1/<%=id%>">No llamado</a></li>
+                <li><a href="/api/encuestados/{{encuestado.id}}/2/<%=id%>">No contesta</a></li>
+                <li><a href="/api/encuestados/{{encuestado.id}}/3/<%=id%>">Llamado</a></li>
             </ol>
         </td>
         <td style="width: 1%;white-space: nowrap;" ng-hide = "encuestado.estado==3">
