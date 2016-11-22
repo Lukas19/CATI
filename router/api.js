@@ -28,7 +28,7 @@ router.post("/upload/:id", function(req, res, next) {
 
     var idProyecto = req.params.id;
     var name = req.file.filename;
-    var ruta = "/Users/lukaszamora/Desktop/CATI/" + req.file.path;
+    var ruta = "/Users/lukaszamora/Desktop/TEST/" + req.file.path;
 
     connection.connect();
     connection.query("LOAD DATA LOCAL INFILE '" + ruta + "' INTO TABLE " +
@@ -44,7 +44,7 @@ router.post("/upload/:id", function(req, res, next) {
             console.log(err);
         }
     });
-    res.redirect('/llamar/?_' + idProyecto);
+    res.redirect('/llamar/?_id=' + idProyecto);
 
 });
 
