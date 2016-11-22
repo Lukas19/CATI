@@ -3,7 +3,7 @@ var mysql      = require('mysql');
 var connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : 'Zamora159',
+    password : 'fchacon',
     database : 'adsw'
 });
 
@@ -70,13 +70,14 @@ router.use( function( req, res, next ) {
 });
 
 //SET Encuestado
-router.get('/encuestados/:id/:idd', function(req, res, next){
+router.get('/encuestados/:id/:idd/:idP', function(req, res, next){
+    var idProyecto = req.params.idP;
     try {
         models.Encuestado.findOne({where: {id: req.params.id}}).then(function (user) {
             user.updateAttributes({
                 estado: req.params.idd
             })
-            res.redirect('/llamar');
+            res.redirect('/llamar?_id=' + idProyecto);
         });
     }catch(ex){
         console.error("Internal error:"+ex);
@@ -99,12 +100,16 @@ router.get('/usuarios', function(req, res, next) {
 });
 
 //GET proyectos
-router.get('/proyectos', function(req, res, next) {
+router.get('/proyectos/:isAdmin', function(req, res, next) {
 	var User = req.user;
+    var isAdmin = req.params.isAdmin;
     try {
 		models.Proyecto.findAll().then(function (user) {
-			res.render('RDProyecto.html', {title: 'Listar Proyectos', resultado: user, user: User});
-		});
+		    if (isAdmin != 'false') {
+                res.render('RDProyecto.html', {title: 'Listar Proyectos', resultado: user, user: User});
+            }else{
+                res.render('RDProyectoU.html', {title: 'Listar Proyectos', resultado: user, user: User});
+		}});
 	} catch (ex) {
 		console.error("Internal error:" + ex);
 		return next(ex);

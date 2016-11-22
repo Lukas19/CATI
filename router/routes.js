@@ -52,7 +52,7 @@ app.get('/verAdmin', isLoggedAdmin,  function(req, res){
 
 app.get('/verProyecto', isLogged,  function(req, res){
     var user = req.user;
-    res.redirect('/api/proyectos');
+    res.redirect('/api/proyectos/' + isAdmin);
 });
 
 app.get('/crearAdmin', isLoggedAdmin, function(req, res){

@@ -88,12 +88,13 @@
         <td><%= resultado[i].id%></td>
         <td><%= resultado[i].nombre%></td>
         <td><%= resultado[i].AdminId %></td>
-        <td> <a href='/api/proyectos/<%= resultado[i].id %>?_method=DELETE'>
-            Eliminar</a>
+        <td>
+            <a href="/llamar/?_id=<%= resultado[i].id %>">Llamar</a>
+            <a href='/api/proyectos/<%= resultado[i].id %>?_method=DELETE'>
+                Eliminar</a>
             <a href='/actualizarProyecto/?_id=<%= resultado[i].id %>'>
                 Modificar</a>
             <a href="/subirDatos/?_id=<%= resultado[i].id %>">Subir Datos</a>
-            <a href="/llamar/?_id=<%= resultado[i].id %>">Llamar</a>
         </td>
     </tr>
     <% }%>

@@ -1,4 +1,5 @@
-<html ng-app="call">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,11 +10,9 @@
     <link rel="stylesheet" href="https://bootswatch.com/united/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script type="text/javascript" src="../controllers/call.js"></script>
-</head>
-<body ng-controller="CallController as personas" >
 
+</head>
+<body>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
 
@@ -68,29 +67,36 @@
 </nav>
 
 
-<table style="width:100%">
+
+
+<h1><%=title%></h1>
+
+
+<table class="table">
+    <thead>
     <tr>
-        <th>Nombre</th>
-        <th>Estado Actual</th>
-        <th>Cambiar Estado</th>
-        <th>Llamar</th>
+        <th> ID </th>
+        <th> Nombre </th>
+        <th> ID Admin </th>
+        <th> Acciones </th>
     </tr>
-    <tr ng-repeat = "encuestado in encuestados | filter: {ProyectoId: <%=id%>}:true">
+    </thead>
 
-        <td>{{encuestado.nombre + " " + encuestado.apellido}}</td>
-        <td>{{encuestado.estado}}</td>
+    <% for (var i= 0;i<resultado.length;i++){ %>
+    <tbody>
+    <tr>
+        <td><%= resultado[i].id%></td>
+        <td><%= resultado[i].nombre%></td>
+        <td><%= resultado[i].AdminId %></td>
         <td>
-            <ol>
-                <li><a href="/api/encuestados/{{encuestado.id}}/1/<%=id%>">No llamado</a></li>
-                <li><a href="/api/encuestados/{{encuestado.id}}/2/<%=id%>">No contesta</a></li>
-                <li><a href="/api/encuestados/{{encuestado.id}}/3/<%=id%>">Llamado</a></li>
-            </ol>
+            <a href="/llamar/?_id=<%= resultado[i].id %>">Llamar</a>
         </td>
-        <td style="width: 1%;white-space: nowrap;" ng-hide = "encuestado.estado==3">
-            <a href="callto://+569{{encuestado.numero}}"><img src="https://secure.skypeassets.com/apollo/2.0.936/images/components/contactme-button/callbutton_32px.png"></a>
-        </td>
-
     </tr>
+    <% }%>
+    </tbody>
 </table>
+
+
+
 </body>
 </html>
