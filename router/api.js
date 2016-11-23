@@ -3,7 +3,7 @@ var mysql      = require('mysql');
 var connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : 'fchacon',
+    password : 'Zamora159',
     database : 'adsw'
 });
 
@@ -19,6 +19,12 @@ var fs		 = require('fs');
 
 //Return router
 module.exports = router;
+
+router.post("/survey/:id", function(req, res, next){
+    var idProyecto = req.params.id;
+    res.redirect('/llamar/?_id=' + idProyecto);
+
+})
 
 router.post("/upload/:id", function(req, res, next) {
     if (!req.file) {
@@ -70,14 +76,14 @@ router.use( function( req, res, next ) {
 });
 
 //SET Encuestado
-router.get('/encuestados/:id/:idd/:idP', function(req, res, next){
+router.get('/encuestados/:id/:idd/:idP/:link', function(req, res, next){
     var idProyecto = req.params.idP;
     try {
         models.Encuestado.findOne({where: {id: req.params.id}}).then(function (user) {
             user.updateAttributes({
                 estado: req.params.idd
             })
-            res.redirect('/llamar?_id=' + idProyecto);
+            res.redirect('/llamar?_id=' + idProyecto + '&&_link=' + req.params.link);
         });
     }catch(ex){
         console.error("Internal error:"+ex);

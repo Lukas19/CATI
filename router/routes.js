@@ -97,8 +97,16 @@ app.get('/actualizarProyecto', isLoggedAdmin, function(req,res){
 app.get('/llamar', isLogged, function(req, res){
     var user = req.user;
     var id = req.query._id;
-    res.render('Call.html',{id: id.toString(), user: user});
+    var link = req.query._link;
+    res.render('Call.html',{id: id.toString(), user: user, link: link});
 });
+
+app.get('/survey', isLogged, function(req, res){
+    var user = req.user;
+    var id = req.query._id;
+    res.render('Survey.html',{id: id.toString(), user: user});
+});
+
 
 app.get('/encuesta', isLogged, function(req, res){
     //var user = req.user;

@@ -12,7 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script type="text/javascript" src="../controllers/call.js"></script>
 </head>
-<body ng-controller="CallController as personas" >
+<body ng-controller="CallController as personas" ng-init="enlace='<%=link%>'" >
 
 <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -81,15 +81,15 @@
         <td>{{encuestado.estado}}</td>
         <td>
             <ol>
-                <li><a href="/api/encuestados/{{encuestado.id}}/1/<%=id%>">No llamado</a></li>
-                <li><a href="/api/encuestados/{{encuestado.id}}/2/<%=id%>">No contesta</a></li>
-                <li><a href="/api/encuestados/{{encuestado.id}}/3/<%=id%>">Llamado</a></li>
+                <li><a href="/api/encuestados/{{encuestado.id}}/1/<%=id%>/<%=link%>">No llamado</a></li>
+                <li><a href="/api/encuestados/{{encuestado.id}}/2/<%=id%>/<%=link%>">No contesta</a></li>
+                <li><a href="/api/encuestados/{{encuestado.id}}/3/<%=id%>/<%=link%>">Llamado</a></li>
             </ol>
         </td>
         <td style="width: 1%;white-space: nowrap;" ng-hide = "encuestado.estado==3">
-            <a href="callto://+569{{encuestado.numero}}"><img src="https://secure.skypeassets.com/apollo/2.0.936/images/components/contactme-button/callbutton_32px.png"></a>
+            <div ng-hide="1">{{number = encuestado.numero}}</div>
+            <button ng-click="clickEvent(enlace,number)">Llamar</button>
         </td>
-
     </tr>
 </table>
 </body>

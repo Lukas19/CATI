@@ -4,7 +4,7 @@
 (function () {
     var app = angular.module('call', []);
 
-    app.controller('CallController',function($scope, $http){
+    app.controller('CallController',function($scope, $http, $window, $location){
         $http.get('/getAllEncuestado').success(function (datos) {
             $scope.encuestados = datos;
             if (datos == ""){
@@ -13,5 +13,10 @@
         }).error(function (datos) {
             alert("No hay encuestados");
         })
+        $scope.clickEvent = function(enlace, number) {
+            $window.open(enlace, '_blank');
+            window.location="tel://+" + number;
+        };
+
     });
 })();
