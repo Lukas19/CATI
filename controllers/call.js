@@ -14,8 +14,9 @@
             alert("No hay encuestados");
         })
         $scope.clickEvent = function(enlace, number) {
+            enlace = "https://" + enlace;
             $window.open(enlace, '_blank');
-            window.location="tel://+" + number;
+            window.location="skype:" + number + "?call";
         };
 
     });

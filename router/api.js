@@ -3,7 +3,7 @@ var mysql      = require('mysql');
 var connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : 'Zamora159',
+    password : 'fchacon',
     database : 'adsw'
 });
 
@@ -24,7 +24,34 @@ router.post("/survey/:id", function(req, res, next){
     var idProyecto = req.params.id;
     res.redirect('/llamar/?_id=' + idProyecto);
 
-})
+});
+
+router.get('/download/:id/:name', function(req, res){
+    var id = req.params.id;
+    var name = req.params.name;
+    var file = '/home/fchacon/git/CATI/public/uploads/'+ id + '/' + name;
+    res.download(file); // Set disposition and send it.
+});
+
+router.get('/grabacion/:id', function (req,res) {
+    var walk    = require('walk');
+    var files   = [];
+
+    // Walker options
+    var walker  = walk.walk('./public/uploads/' + req.params.id + '/', { followLinks: false });
+
+    walker.on('file', function(root, stat, next) {
+        // Add this file to the list of files
+        files.push(stat.name);
+        next();
+    });
+
+    walker.on('end', function() {
+        console.log(files);
+        res.render('Grabacion.html', {user: req.user, files: files, id: req.params.id});
+    });
+
+});
 
 router.post("/upload/:id", function(req, res, next) {
     if (!req.file) {
@@ -34,7 +61,7 @@ router.post("/upload/:id", function(req, res, next) {
 
     var idProyecto = req.params.id;
     var name = req.file.filename;
-    var ruta = "/Users/lukaszamora/Desktop/TEST/" + req.file.path;
+    var ruta = "/home/fchacon/git/CATI/" + req.file.path;
 
     connection.connect();
     connection.query("LOAD DATA LOCAL INFILE '" + ruta + "' INTO TABLE " +
@@ -50,7 +77,7 @@ router.post("/upload/:id", function(req, res, next) {
             console.log(err);
         }
     });
-    res.redirect('/llamar/?_id=' + idProyecto);
+    res.redirect('/api/proyectos/true');
 
 });
 
@@ -61,14 +88,11 @@ router.use( function( req, res, next ) {
 	// and we checked for the requested query properties
 	// if _method was existed
 	// then we know, clients need to call DELETE request instead
-	//console.log("time to change " + req.query._method);
-	//console.log(req.body._method);
 	if ( req.query._method == 'DELETE' ) {
 		// change the original METHOD
 		req.method = 'DELETE';
 		req.url = req.path;
 	}else if ( req.body._method == 'PUT' ) {
-		console.log("putttt");
 		req.method = 'PUT';
 		req.url = req.path;
 	}
@@ -90,7 +114,6 @@ router.get('/encuestados/:id/:idd/:idP/:link', function(req, res, next){
         return next(ex);
     }
 });
-
 
 //GET usuarios
 router.get('/usuarios', function(req, res, next) {
@@ -160,7 +183,7 @@ try{
 		password: req.body.password,
 		email: req.body.email
 	}).then(function (result) {
-		res.redirect("/");
+		res.redirect("/api/usuarios");
 	});
 	}
 	catch(ex){
@@ -177,7 +200,7 @@ router.post('/admins', function(req,res,next){
             password: req.body.password,
             email: req.body.email
         }).then(function (result) {
-            res.redirect("/");
+            res.redirect("/api/admins");
         });
     }
     catch(ex){
@@ -188,14 +211,14 @@ router.post('/admins', function(req,res,next){
 
 //POST crear proyecto
 router.post('/:id/proyectos/create', function(req,res,next){
-    console.log(req.params.id);
     try{
         models.Proyecto.create({
             nombre: req.body.nombre,
             enlace: req.body.enlace,
             AdminId: req.params.id
         }).then(function (result) {
-            res.redirect("/");
+            fs.mkdirSync('./public/uploads/' + result.id);
+            res.redirect("/api/proyectos/true");
         });
     }
     catch(ex){
@@ -241,7 +264,8 @@ router.put('/proyectos/:id', function(req,res,next){
         models.Proyecto.findOne({ where: {id:req.params.id} }).then(function (user) {
             if(req.body.nombre){
                 user.updateAttributes({
-                    nombre: req.body.nombre
+                    nombre: req.body.nombre,
+                    enlace: req.body.enlace
                 })
             }
             return models.Proyecto.findAll().then(function (user) {
@@ -305,7 +329,7 @@ router.delete('/proyectos/:id', function(req,res,next){
     try{
         models.Proyecto.destroy({where: {id: req.params.id} }).then(function () {
             return models.Proyecto.findAll().then(function (user) {
-                res.redirect('/api/proyectos');
+                res.redirect('/api/proyectos/true');
             })
         })
     }
@@ -318,11 +342,13 @@ router.delete('/proyectos/:id', function(req,res,next){
 //Delete admin
 router.delete('/admins/:id', function(req,res,next){
     try{
-        models.Admin.destroy({where: {id: req.params.id} }).then(function () {
-            return models.Admin.findAll().then(function (user) {
-				res.redirect('/api/admins');
+        if (req.user.id != req.params.id) {
+            models.Admin.destroy({where: {id: req.params.id}}).then(function () {
+                return models.Admin.findAll().then(function (user) {
+                    res.redirect('/api/admins');
+                })
             })
-        })
+        }
     }
     catch(ex){
         console.error("Internal error:"+ex);

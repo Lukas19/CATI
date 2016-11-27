@@ -66,36 +66,25 @@
     </div>
 </nav>
 
-
-
-
-<h1><%=title%></h1>
-
-
 <table class="table">
     <thead>
     <tr>
-        <th> ID </th>
         <th> Nombre </th>
-        <th> ID Admin </th>
         <th> Acciones </th>
     </tr>
     </thead>
 
-    <% for (var i= 0;i<resultado.length;i++){ %>
+    <% for (var i= 0;i<files.length;i++){ %>
     <tbody>
     <tr>
-        <td><%= resultado[i].id%></td>
-        <td><%= resultado[i].nombre%></td>
-        <td><%= resultado[i].AdminId %></td>
+        <td><%= files[i]%></td>
         <td>
-            <a href="/llamar/?_id=<%= resultado[i].id %>&&_link=<%= resultado[i].enlace%>">Llamar</a>
+            <a href="/api/download/<%= id + '/' + files[i] %>">Descargar</a>
         </td>
     </tr>
     <% }%>
     </tbody>
 </table>
-
 
 
 </body>
