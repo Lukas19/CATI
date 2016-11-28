@@ -229,22 +229,23 @@ router.post('/:id/proyectos/create', function(req,res,next){
 
 //Update user
 router.put('/usuarios/:id', function(req,res,next){
-	console.log("router.put");
-	try{
+	var User;
+	var Password;
+	var Email;
+    try{
 		models.Usuario.findOne({ where: {id:req.params.id} }).then(function (user) {
-			if(req.body.username){
-				if(req.body.email && req.body.password) {
-					user.updateAttributes({
-						username: req.body.username,
-						email: req.body.email,
-						password: req.body.password
-					})
-				}else {
-					user.updateAttributes({
-						username: req.body.username
-					})
-				}
-			}
+			if(req.body.username){User = req.body.username;}
+		    else{User = user.username;}
+            if(req.body.password){Password = req.body.password;}
+            else{Password = user.password;}
+            if(req.body.email){Email = req.body.email;}
+            else{Email = user.email;}
+
+            user.updateAttributes({
+                    username: User,
+                    email: Email,
+                    password: Password
+                });
 			return models.Usuario.findAll().then(function (user) {
 				res.redirect('/api/usuarios');
 			})
@@ -258,16 +259,20 @@ router.put('/usuarios/:id', function(req,res,next){
 
 //Update proyecto
 router.put('/proyectos/:id', function(req,res,next){
-    console.log("router.put");
+    var Name;
+    var Enlace;
     try{
-
         models.Proyecto.findOne({ where: {id:req.params.id} }).then(function (user) {
-            if(req.body.nombre){
-                user.updateAttributes({
-                    nombre: req.body.nombre,
-                    enlace: req.body.enlace
-                })
-            }
+            if(req.body.nombre){Name = req.body.nombre;}
+            else{Name = user.nombre;}
+            if(req.body.enlace){Enlace = req.body.enlace;}
+            else{Enlace = user.enlace;}
+
+            user.updateAttributes({
+                nombre: req.body.nombre,
+                enlace: req.body.enlace
+            });
+
             return models.Proyecto.findAll().then(function (user) {
                 res.redirect('/api/proyectos');
             })
@@ -281,23 +286,23 @@ router.put('/proyectos/:id', function(req,res,next){
 
 //Update admin
 router.put('/admins/:id', function(req,res,next){
-    console.log("router.put");
+    var User;
+    var Password;
+    var Email;
     try{
-
         models.Admin.findOne({ where: {id:req.params.id} }).then(function (user) {
-            if(req.body.username){
-                if(req.body.email && req.body.password) {
-                    user.updateAttributes({
-                        username: req.body.username,
-                        email: req.body.email,
-                        password: req.body.password
-                    })
-                }else {
-                    user.updateAttributes({
-                        username: req.body.username
-                    })
-                }
-            }
+            if(req.body.username){User = req.body.username;}
+            else{User = user.username;}
+            if(req.body.password){Password = req.body.password;}
+            else{Password = user.password;}
+            if(req.body.email){Email = req.body.email;}
+            else{Email = user.email;}
+
+            user.updateAttributes({
+                username: User,
+                email: Email,
+                password: Password
+            });
             return models.Admin.findAll().then(function (user) {
 				res.redirect('/api/admins');
             })
