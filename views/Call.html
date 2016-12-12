@@ -96,12 +96,13 @@
             <ol>
                 <li><a href="/api/encuestados/{{encuestado.id}}/1/<%=id%>/<%=link%>">No llamado</a></li>
                 <li><a href="/api/encuestados/{{encuestado.id}}/2/<%=id%>/<%=link%>">No contesta</a></li>
-                <li><a href="/api/encuestados/{{encuestado.id}}/3/<%=id%>/<%=link%>">Llamado</a></li>
+                <li><a href="/api/encuestados/{{encuestado.id}}/3/<%=id%>/<%=link%>">Encuesta completada</a></li>
+                <li><a href="/api/encuestados/{{encuestado.id}}/4/<%=id%>/<%=link%>">Numero inexistente</a></li>
             </ol>
         </td>
-        <td style="width: 1%;white-space: nowrap;" ng-hide = "encuestado.estado==3">
+        <td style="width: 1%;white-space: nowrap;" ng-hide = "encuestado.estado==3 || encuestado.estado==4">
             <div ng-hide="1">{{number = encuestado.numero}}</div>
-            <button ng-click="clickEvent(enlace,number)">Llamar</button>
+            <button ng-click="clickEvent(enlace,number)"><img src="../images/skype.png"></button>
         </td>
     </tr>
 </table>

@@ -211,10 +211,12 @@ router.post('/admins', function(req,res,next){
 
 //POST crear proyecto
 router.post('/:id/proyectos/create', function(req,res,next){
+    var Enlace = req.body.enlace;
+    Enlace = Enlace.substring(30);
     try{
         models.Proyecto.create({
             nombre: req.body.nombre,
-            enlace: req.body.enlace,
+            enlace: Enlace,
             AdminId: req.params.id
         }).then(function (result) {
             fs.mkdirSync('./public/uploads/' + result.id);
@@ -269,12 +271,12 @@ router.put('/proyectos/:id', function(req,res,next){
             else{Enlace = user.enlace;}
 
             user.updateAttributes({
-                nombre: req.body.nombre,
-                enlace: req.body.enlace
+                nombre: Name,
+                enlace: Enlace
             });
 
             return models.Proyecto.findAll().then(function (user) {
-                res.redirect('/api/proyectos');
+                res.redirect('/api/proyectos/true');
             })
         });
     }

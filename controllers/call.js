@@ -14,9 +14,9 @@
             alert("No hay encuestados");
         })
         $scope.clickEvent = function(enlace, number) {
-            enlace = "https://" + enlace;
+            enlace = "https://es.surveymonkey.com/r/" + enlace;
             $window.open(enlace, '_blank');
-            window.location="skype:" + number + "?call";
+            window.location="skype:+56" + number + "?call";
         };
 
     });
